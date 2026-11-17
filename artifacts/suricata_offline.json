@@ -1,0 +1,204 @@
+{
+  "suricata_version": "7.0.3",
+  "pcap_source": "OISF/suricata-verify tests/bug-4663-03/icmp_and_ssh.pcap",
+  "offline_only": true,
+  "eve_events": 6,
+  "common_events": [
+    {
+      "schema_version": "1.0",
+      "event_id": "suricata-0",
+      "source": "suricata-offline-pcap",
+      "is_demo": false,
+      "timestamp_utc": "2021-09-10T14:23:54.591487+0900",
+      "src_ip": "192.168.0.30",
+      "dst_ip": "8.8.8.8",
+      "src_port": 0,
+      "dst_port": 0,
+      "protocol": "ICMP",
+      "event_type": "alert",
+      "severity": 3,
+      "signature": "AI Home Shield offline ICMP test",
+      "signature_id": 1000001,
+      "evidence": [
+        "AI Home Shield offline ICMP test"
+      ],
+      "raw_event_type": "alert"
+    },
+    {
+      "schema_version": "1.0",
+      "event_id": "suricata-1",
+      "source": "suricata-offline-pcap",
+      "is_demo": false,
+      "timestamp_utc": "2021-09-10T14:23:54.600065+0900",
+      "src_ip": "8.8.8.8",
+      "dst_ip": "192.168.0.30",
+      "src_port": 0,
+      "dst_port": 0,
+      "protocol": "ICMP",
+      "event_type": "alert",
+      "severity": 3,
+      "signature": "AI Home Shield offline ICMP test",
+      "signature_id": 1000001,
+      "evidence": [
+        "AI Home Shield offline ICMP test"
+      ],
+      "raw_event_type": "alert"
+    },
+    {
+      "schema_version": "1.0",
+      "event_id": "suricata-2",
+      "source": "suricata-offline-pcap",
+      "is_demo": false,
+      "timestamp_utc": "2021-09-10T14:24:00.665156+0900",
+      "src_ip": "192.168.0.30",
+      "dst_ip": "192.168.0.123",
+      "src_port": 42116,
+      "dst_port": 22,
+      "protocol": "TCP",
+      "event_type": "alert",
+      "severity": 3,
+      "signature": "AI Home Shield offline SSH test",
+      "signature_id": 1000002,
+      "evidence": [
+        "AI Home Shield offline SSH test"
+      ],
+      "raw_event_type": "alert"
+    },
+    {
+      "schema_version": "1.0",
+      "event_id": "suricata-3",
+      "source": "suricata-offline-pcap",
+      "is_demo": false,
+      "timestamp_utc": "2021-09-10T14:24:00.728192+0900",
+      "src_ip": "192.168.0.30",
+      "dst_ip": "192.168.0.123",
+      "src_port": 42116,
+      "dst_port": 22,
+      "protocol": "TCP",
+      "event_type": "ssh",
+      "severity": null,
+      "signature": null,
+      "signature_id": null,
+      "evidence": [],
+      "raw_event_type": "ssh"
+    },
+    {
+      "schema_version": "1.0",
+      "event_id": "suricata-4",
+      "source": "suricata-offline-pcap",
+      "is_demo": false,
+      "timestamp_utc": "2021-09-10T14:23:54.591487+0900",
+      "src_ip": "192.168.0.30",
+      "dst_ip": "192.168.0.123",
+      "src_port": 42116,
+      "dst_port": 22,
+      "protocol": "TCP",
+      "event_type": "flow",
+      "severity": null,
+      "signature": null,
+      "signature_id": null,
+      "evidence": [],
+      "raw_event_type": "flow"
+    },
+    {
+      "schema_version": "1.0",
+      "event_id": "suricata-5",
+      "source": "suricata-offline-pcap",
+      "is_demo": false,
+      "timestamp_utc": "2021-09-10T14:23:54.591487+0900",
+      "src_ip": "192.168.0.30",
+      "dst_ip": "8.8.8.8",
+      "src_port": null,
+      "dst_port": null,
+      "protocol": "ICMP",
+      "event_type": "flow",
+      "severity": null,
+      "signature": null,
+      "signature_id": null,
+      "evidence": [],
+      "raw_event_type": "flow"
+    }
+  ],
+  "blue_results": [
+    {
+      "event_id": "suricata-0",
+      "detected": true,
+      "reason": "Suricata offline alert evidence",
+      "policy_mode": "dry-run",
+      "approval_required": true,
+      "policy_candidate": {
+        "action": "block_dry_run",
+        "scope": "8.8.8.8",
+        "reason": "administrator approval required",
+        "approval_required": true
+      }
+    },
+    {
+      "event_id": "suricata-1",
+      "detected": true,
+      "reason": "Suricata offline alert evidence",
+      "policy_mode": "dry-run",
+      "approval_required": true,
+      "policy_candidate": {
+        "action": "block_dry_run",
+        "scope": "192.168.0.30",
+        "reason": "administrator approval required",
+        "approval_required": true
+      }
+    },
+    {
+      "event_id": "suricata-2",
+      "detected": true,
+      "reason": "Suricata offline alert evidence",
+      "policy_mode": "dry-run",
+      "approval_required": true,
+      "policy_candidate": {
+        "action": "block_dry_run",
+        "scope": "192.168.0.123",
+        "reason": "administrator approval required",
+        "approval_required": true
+      }
+    },
+    {
+      "event_id": "suricata-3",
+      "detected": false,
+      "reason": "non-alert observation",
+      "policy_mode": "dry-run",
+      "approval_required": true,
+      "policy_candidate": {
+        "action": "observe",
+        "scope": "192.168.0.123",
+        "reason": "administrator approval required",
+        "approval_required": true
+      }
+    },
+    {
+      "event_id": "suricata-4",
+      "detected": false,
+      "reason": "non-alert observation",
+      "policy_mode": "dry-run",
+      "approval_required": true,
+      "policy_candidate": {
+        "action": "observe",
+        "scope": "192.168.0.123",
+        "reason": "administrator approval required",
+        "approval_required": true
+      }
+    },
+    {
+      "event_id": "suricata-5",
+      "detected": false,
+      "reason": "non-alert observation",
+      "policy_mode": "dry-run",
+      "approval_required": true,
+      "policy_candidate": {
+        "action": "observe",
+        "scope": "8.8.8.8",
+        "reason": "administrator approval required",
+        "approval_required": true
+      }
+    }
+  ],
+  "detected": 3,
+  "policy_applied": false
+}

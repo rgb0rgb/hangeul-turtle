@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["risk", "reason", "action", "approval_required"],
+  "properties": {
+    "risk": {"enum": ["low", "medium", "high", "critical"]},
+    "reason": {"type": "string", "maxLength": 500},
+    "action": {"enum": ["observe", "block_dry_run"]},
+    "approval_required": {"const": true}
+  },
+  "additionalProperties": true
+}

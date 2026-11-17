@@ -1,0 +1,29 @@
+{
+  "development": {
+    "seed": 100010,
+    "execution_status": "actual",
+    "evaluation": {
+      "detection_status": "detected",
+      "blocking_status": "unknown",
+      "overall_status": "unknown",
+      "reason": "CyberBattleSim abstract state provides no blocking evidence",
+      "blue_claims_ignored": true
+    }
+  },
+  "holdout": {
+    "seed": 200013,
+    "execution_status": "actual",
+    "evaluation": {
+      "detection_status": "detected",
+      "blocking_status": "unknown",
+      "overall_status": "unknown",
+      "reason": "CyberBattleSim abstract state provides no blocking evidence",
+      "blue_claims_ignored": true
+    }
+  },
+  "seed_separation": true,
+  "policy_promotion": {
+    "promoted": false,
+    "reason": "blocking evidence unavailable; no automatic promotion"
+  }
+}

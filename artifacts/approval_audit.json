@@ -1,0 +1,123 @@
+{
+  "cases": [
+    {
+      "scenario_id": "insider-normal-batch",
+      "analysis": {
+        "risk": "low",
+        "score": 35,
+        "reasons": [
+          "bulk_volume"
+        ],
+        "explicit_policy_violation": false,
+        "independent_rule_engine": true,
+        "decision": "allowed"
+      },
+      "approval": {
+        "request_id": "audit-insider-normal-batch",
+        "requester_id": "synthetic-user-business_user",
+        "state": "allowed",
+        "created_at": 1000,
+        "expires_at": 1010,
+        "approver_role": "security_officer",
+        "notification": "not_required"
+      }
+    },
+    {
+      "scenario_id": "insider-admin-export",
+      "analysis": {
+        "risk": "critical",
+        "score": 120,
+        "reasons": [
+          "bulk_volume",
+          "high_risk_action",
+          "external_destination"
+        ],
+        "explicit_policy_violation": true,
+        "independent_rule_engine": true,
+        "decision": "pending_approval"
+      },
+      "approval": {
+        "request_id": "audit-insider-admin-export",
+        "requester_id": "synthetic-user-super_admin",
+        "state": "pending_approval",
+        "created_at": 1000,
+        "expires_at": 1010,
+        "approver_role": "security_officer",
+        "notification": "queued"
+      }
+    },
+    {
+      "scenario_id": "insider-audit-tamper",
+      "analysis": {
+        "risk": "high",
+        "score": 55,
+        "reasons": [
+          "high_risk_action"
+        ],
+        "explicit_policy_violation": true,
+        "independent_rule_engine": true,
+        "decision": "pending_approval"
+      },
+      "approval": {
+        "request_id": "audit-insider-audit-tamper",
+        "requester_id": "synthetic-user-super_admin",
+        "state": "pending_approval",
+        "created_at": 1000,
+        "expires_at": 1010,
+        "approver_role": "security_officer",
+        "notification": "queued"
+      }
+    }
+  ],
+  "audit_records": [
+    {
+      "event": "submitted",
+      "request_id": "audit-insider-normal-batch",
+      "requester_id": "synthetic-user-business_user",
+      "state": "allowed",
+      "notification": "not_required",
+      "policy_version": "insider-v1",
+      "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "hash": "3fd1923602fb26341c3d19d40636a32595ff82a43dd5820a9989fa458fb03535"
+    },
+    {
+      "event": "submitted",
+      "request_id": "audit-insider-admin-export",
+      "requester_id": "synthetic-user-super_admin",
+      "state": "pending_approval",
+      "notification": "queued",
+      "policy_version": "insider-v1",
+      "previous_hash": "3fd1923602fb26341c3d19d40636a32595ff82a43dd5820a9989fa458fb03535",
+      "hash": "f106b8b3b6e5aec51fb58e79fafbbe9f0a0e91c82fd25cbadb5e9bfa1ef5e46b"
+    },
+    {
+      "event": "decision",
+      "request_id": "audit-insider-admin-export",
+      "approver_id": "security-lead",
+      "state": "approved",
+      "previous_hash": "f106b8b3b6e5aec51fb58e79fafbbe9f0a0e91c82fd25cbadb5e9bfa1ef5e46b",
+      "hash": "48e59953fe4ba3e28a3360e21f26eb66caf0ded247ba3e96f56e98ad923cd3b4"
+    },
+    {
+      "event": "submitted",
+      "request_id": "audit-insider-audit-tamper",
+      "requester_id": "synthetic-user-super_admin",
+      "state": "pending_approval",
+      "notification": "queued",
+      "policy_version": "insider-v1",
+      "previous_hash": "48e59953fe4ba3e28a3360e21f26eb66caf0ded247ba3e96f56e98ad923cd3b4",
+      "hash": "f13b12d467ece57df65971b6c29610536bf3d77be7791d48b3a7979e3b80e60f"
+    },
+    {
+      "event": "decision",
+      "request_id": "audit-insider-audit-tamper",
+      "approver_id": "security-lead",
+      "state": "rejected",
+      "previous_hash": "f13b12d467ece57df65971b6c29610536bf3d77be7791d48b3a7979e3b80e60f",
+      "hash": "b809f2cf41018ca63a5e56e27bc95d5b3140fa093ca3f6b12fa02174b4f7fa07"
+    }
+  ],
+  "audit_integrity": true,
+  "policy_applied": false,
+  "external_notifications": false
+}

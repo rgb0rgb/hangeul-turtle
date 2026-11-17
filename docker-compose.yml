@@ -1,0 +1,37 @@
+services:
+  simulator:
+    image: python:3.12-slim
+    working_dir: /app
+    command: ["python", "simulator/generate_events.py", "--scenario", "login_burst", "--seed", "42", "--output", "/tmp/events.jsonl"]
+    volumes: [".:/app:ro"]
+    networks: [lab]
+    read_only: true
+    security_opt: ["no-new-privileges:true"]
+  evaluator:
+    image: python:3.12-slim
+    working_dir: /app
+    command: ["python", "-m", "unittest", "discover", "-s", "tests", "-v"]
+    volumes: [".:/app:ro"]
+    networks: [lab]
+    read_only: true
+    security_opt: ["no-new-privileges:true"]
+  cyberbattle_smoke:
+    build:
+      context: ./docker/cyberbattle
+    working_dir: /app
+    command: ["--seed", "7", "--steps", "3", "--episodes", "1"]
+    volumes: [".:/app:ro"]
+    networks: [lab]
+    read_only: true
+    cap_drop: ["ALL"]
+    security_opt: ["no-new-privileges:true"]
+    cpus: 1.0
+    mem_limit: 768m
+    pids_limit: 128
+    environment:
+      MPLCONFIGDIR: /tmp/matplotlib
+    tmpfs:
+      - /tmp
+networks:
+  lab:
+    internal: true

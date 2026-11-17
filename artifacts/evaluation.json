@@ -1,0 +1,97 @@
+{
+  "event_count": 5,
+  "detected_count": 5,
+  "results": [
+    {
+      "event_id": "demo-42-0000",
+      "detected": true,
+      "reason": "허용된 합성 시나리오의 이상 징후",
+      "policy_candidate": {
+        "policy_id": "dry-run-demo-42-0000",
+        "scope": "demo-cam-01",
+        "match": {
+          "event_type": "auth_failure_burst"
+        },
+        "action": "block_dry_run",
+        "reason": "독립 검증 및 관리자 승인 필요",
+        "rollback": {
+          "mode": "automatic"
+        },
+        "approval_required": true
+      }
+    },
+    {
+      "event_id": "demo-42-0001",
+      "detected": true,
+      "reason": "허용된 합성 시나리오의 이상 징후",
+      "policy_candidate": {
+        "policy_id": "dry-run-demo-42-0001",
+        "scope": "demo-cam-01",
+        "match": {
+          "event_type": "auth_failure_burst"
+        },
+        "action": "block_dry_run",
+        "reason": "독립 검증 및 관리자 승인 필요",
+        "rollback": {
+          "mode": "automatic"
+        },
+        "approval_required": true
+      }
+    },
+    {
+      "event_id": "demo-42-0002",
+      "detected": true,
+      "reason": "허용된 합성 시나리오의 이상 징후",
+      "policy_candidate": {
+        "policy_id": "dry-run-demo-42-0002",
+        "scope": "demo-cam-01",
+        "match": {
+          "event_type": "auth_failure_burst"
+        },
+        "action": "block_dry_run",
+        "reason": "독립 검증 및 관리자 승인 필요",
+        "rollback": {
+          "mode": "automatic"
+        },
+        "approval_required": true
+      }
+    },
+    {
+      "event_id": "demo-42-0003",
+      "detected": true,
+      "reason": "허용된 합성 시나리오의 이상 징후",
+      "policy_candidate": {
+        "policy_id": "dry-run-demo-42-0003",
+        "scope": "demo-cam-01",
+        "match": {
+          "event_type": "auth_failure_burst"
+        },
+        "action": "block_dry_run",
+        "reason": "독립 검증 및 관리자 승인 필요",
+        "rollback": {
+          "mode": "automatic"
+        },
+        "approval_required": true
+      }
+    },
+    {
+      "event_id": "demo-42-0004",
+      "detected": true,
+      "reason": "허용된 합성 시나리오의 이상 징후",
+      "policy_candidate": {
+        "policy_id": "dry-run-demo-42-0004",
+        "scope": "demo-cam-01",
+        "match": {
+          "event_type": "auth_failure_burst"
+        },
+        "action": "block_dry_run",
+        "reason": "독립 검증 및 관리자 승인 필요",
+        "rollback": {
+          "mode": "automatic"
+        },
+        "approval_required": true
+      }
+    }
+  ],
+  "is_demo": true
+}

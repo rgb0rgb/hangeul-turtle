@@ -1,0 +1,1070 @@
+{
+  "experiment_id": "repeat-1000-10",
+  "repetitions": 10,
+  "is_demo": true,
+  "trained_on_holdout": false,
+  "rules_baseline": {
+    "detection_rate": 0.9,
+    "false_positive_rate": 0.0,
+    "mean_latency_ms": 0.0014147200029886637,
+    "p95_latency_ms": 0.003392000053281663
+  },
+  "rules_plus_blue": {
+    "detection_rate": 1.0,
+    "false_positive_rate": 0.0,
+    "mean_latency_ms": 0.0014147200029886637,
+    "p95_latency_ms": 0.003392000053281663
+  },
+  "rows": [
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0044000003072142135
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.002750000021478627
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.001925000105984509
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0014659999578725547
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0013750000107393134
+    },
+    {
+      "scenario": "iot_new_destination",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0015579998944303952
+    },
+    {
+      "scenario": "file_change_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0014659999578725547
+    },
+    {
+      "scenario": "file_change_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0011919996723008808
+    },
+    {
+      "scenario": "file_change_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0011920001270482317
+    },
+    {
+      "scenario": "iot_config_anomaly",
+      "is_attack": true,
+      "rules": false,
+      "blue": true,
+      "latency_ms": 0.001282999619434122
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.001740999778121477
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.0012830000741814729
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.0011910001376236323
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.001100000190490391
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.0010999997357430402
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0012840000636060722
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.001100000190490391
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0010999997357430402
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.001100000190490391
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0013750000107393134
+    },
+    {
+      "scenario": "iot_new_destination",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0011920001270482317
+    },
+    {
+      "scenario": "file_change_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0011920001270482317
+    },
+    {
+      "scenario": "file_change_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0010999997357430402
+    },
+    {
+      "scenario": "file_change_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0010080002539325505
+    },
+    {
+      "scenario": "iot_config_anomaly",
+      "is_attack": true,
+      "rules": false,
+      "blue": true,
+      "latency_ms": 0.001100000190490391
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.0011910001376236323
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.0010999997357430402
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.001100000190490391
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.0010080002539325505
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.0010999997357430402
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0012840000636060722
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.001100000190490391
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0010090002433571499
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.001100000190490391
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0010999997357430402
+    },
+    {
+      "scenario": "iot_new_destination",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0011910001376236323
+    },
+    {
+      "scenario": "file_change_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.001100000190490391
+    },
+    {
+      "scenario": "file_change_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0010999997357430402
+    },
+    {
+      "scenario": "file_change_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0010080002539325505
+    },
+    {
+      "scenario": "iot_config_anomaly",
+      "is_attack": true,
+      "rules": false,
+      "blue": true,
+      "latency_ms": 0.001100000190490391
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.0011919996723008808
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.0010999997357430402
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.001100000190490391
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.0010999997357430402
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.0010080002539325505
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0011920001270482317
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0010999997357430402
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0010999997357430402
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0010090002433571499
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0010999997357430402
+    },
+    {
+      "scenario": "iot_new_destination",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.004308000370656373
+    },
+    {
+      "scenario": "file_change_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.003758999810088426
+    },
+    {
+      "scenario": "file_change_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.001100000190490391
+    },
+    {
+      "scenario": "file_change_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.001100000190490391
+    },
+    {
+      "scenario": "iot_config_anomaly",
+      "is_attack": true,
+      "rules": false,
+      "blue": true,
+      "latency_ms": 0.0010999997357430402
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.001100000190490391
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.0010080002539325505
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.001100000190490391
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.0010080002539325505
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.0010079997991851997
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0011920001270482317
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0010080002539325505
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0010090002433571499
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0010079997991851997
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0010999997357430402
+    },
+    {
+      "scenario": "iot_new_destination",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0011920001270482317
+    },
+    {
+      "scenario": "file_change_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0010999997357430402
+    },
+    {
+      "scenario": "file_change_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.001466999947297154
+    },
+    {
+      "scenario": "file_change_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.001100000190490391
+    },
+    {
+      "scenario": "iot_config_anomaly",
+      "is_attack": true,
+      "rules": false,
+      "blue": true,
+      "latency_ms": 0.0010999997357430402
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.0011919996723008808
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.001100000190490391
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.0010079997991851997
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.0010080002539325505
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.0010090002433571499
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0011920001270482317
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0010079997991851997
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0010090002433571499
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0013750000107393134
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.003208000180165982
+    },
+    {
+      "scenario": "iot_new_destination",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.003392000053281663
+    },
+    {
+      "scenario": "file_change_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0015589998838549946
+    },
+    {
+      "scenario": "file_change_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.006600000233447645
+    },
+    {
+      "scenario": "file_change_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.003666000338853337
+    },
+    {
+      "scenario": "iot_config_anomaly",
+      "is_attack": true,
+      "rules": false,
+      "blue": true,
+      "latency_ms": 0.0012830000741814729
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.0011910001376236323
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.001100000190490391
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.0012840000636060722
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.001100000190490391
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.0010999997357430402
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.001466999947297154
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.001100000190490391
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0010999997357430402
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0010079997991851997
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0010080002539325505
+    },
+    {
+      "scenario": "iot_new_destination",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0010999997357430402
+    },
+    {
+      "scenario": "file_change_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0011910001376236323
+    },
+    {
+      "scenario": "file_change_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0010079997991851997
+    },
+    {
+      "scenario": "file_change_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0010999997357430402
+    },
+    {
+      "scenario": "iot_config_anomaly",
+      "is_attack": true,
+      "rules": false,
+      "blue": true,
+      "latency_ms": 0.0011920001270482317
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.0010999997357430402
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.0010999997357430402
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.001100000190490391
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.0010080002539325505
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.0010999997357430402
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.001282999619434122
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.001100000190490391
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0010999997357430402
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0010999997357430402
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0010090002433571499
+    },
+    {
+      "scenario": "iot_new_destination",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0011920001270482317
+    },
+    {
+      "scenario": "file_change_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.001100000190490391
+    },
+    {
+      "scenario": "file_change_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.001100000190490391
+    },
+    {
+      "scenario": "file_change_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.001100000190490391
+    },
+    {
+      "scenario": "iot_config_anomaly",
+      "is_attack": true,
+      "rules": false,
+      "blue": true,
+      "latency_ms": 0.008066999725997448
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.004767000064020976
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.0012840000636060722
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.0011920001270482317
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.0011909996828762814
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.001100000190490391
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0013750000107393134
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.001100000190490391
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.001100000190490391
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0010999997357430402
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0011910001376236323
+    },
+    {
+      "scenario": "iot_new_destination",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0011909996828762814
+    },
+    {
+      "scenario": "file_change_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0011920001270482317
+    },
+    {
+      "scenario": "file_change_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0010999997357430402
+    },
+    {
+      "scenario": "file_change_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.001100000190490391
+    },
+    {
+      "scenario": "iot_config_anomaly",
+      "is_attack": true,
+      "rules": false,
+      "blue": true,
+      "latency_ms": 0.0011919996723008808
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.001466999947297154
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.0010999997357430402
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.0010079997991851997
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.0010999997357430402
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.0010080002539325505
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0011920001270482317
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0010999997357430402
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0011920001270482317
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.001008999788609799
+    },
+    {
+      "scenario": "login_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0010999997357430402
+    },
+    {
+      "scenario": "iot_new_destination",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.001100000190490391
+    },
+    {
+      "scenario": "file_change_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0010080002539325505
+    },
+    {
+      "scenario": "file_change_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.0010999997357430402
+    },
+    {
+      "scenario": "file_change_burst",
+      "is_attack": true,
+      "rules": true,
+      "blue": true,
+      "latency_ms": 0.001100000190490391
+    },
+    {
+      "scenario": "iot_config_anomaly",
+      "is_attack": true,
+      "rules": false,
+      "blue": true,
+      "latency_ms": 0.0012840000636060722
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.0010999997357430402
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.005500000042957254
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.0033000001167238224
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.0010079997991851997
+    },
+    {
+      "scenario": "normal_baseline",
+      "is_attack": false,
+      "rules": false,
+      "blue": false,
+      "latency_ms": 0.0010079997991851997
+    }
+  ]
+}

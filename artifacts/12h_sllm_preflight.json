@@ -1,0 +1,1439 @@
+{
+  "scenario_id": "insider-prompt-doc",
+  "seed": 777001,
+  "model_results": {
+    "sequence": [
+      "qwen2.5:7b",
+      "qwen3:4b",
+      "gemma3:4b",
+      "phi4-mini:latest"
+    ],
+    "observation": {
+      "source": "synthetic-insider-event",
+      "role": "business_user",
+      "action": "execute_untrusted_tool",
+      "hour": 12,
+      "records": 10,
+      "sensitivity": "internal",
+      "risk": "high",
+      "detected": true
+    },
+    "results": [
+      {
+        "model": "qwen2.5:7b",
+        "role": "기준 방어 분류기",
+        "status": "slm_inference",
+        "model_training": false,
+        "policy_mode": "dry-run",
+        "json_schema_valid": true,
+        "validated_policy": {
+          "policy_id": "multi-ai-dry-run-qwen2.5-7b",
+          "scope": "simulator-observation",
+          "match": {
+            "source": "CyberBattleSim"
+          },
+          "action": "block_dry_run",
+          "reason": "A business user is executing an untrusted tool during working hours, which could pose a significant security risk.",
+          "rollback": {
+            "mode": "automatic"
+          },
+          "approval_required": true
+        },
+        "risk": "high",
+        "reason": "A business user is executing an untrusted tool during working hours, which could pose a significant security risk.",
+        "action": "block_dry_run",
+        "approval_required": true,
+        "latency_ms": 20393.573,
+        "gpu_memory": {
+          "before_or_during_samples": [
+            {
+              "used_mib": 1594,
+              "free_mib": 4373,
+              "ram_available_mib": 14546,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1594,
+              "free_mib": 4373,
+              "ram_available_mib": 14513,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1594,
+              "free_mib": 4373,
+              "ram_available_mib": 14509,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1594,
+              "free_mib": 4373,
+              "ram_available_mib": 14428,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1594,
+              "free_mib": 4373,
+              "ram_available_mib": 14428,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1609,
+              "free_mib": 4358,
+              "ram_available_mib": 14362,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1663,
+              "free_mib": 4304,
+              "ram_available_mib": 14321,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1663,
+              "free_mib": 4304,
+              "ram_available_mib": 14309,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1845,
+              "free_mib": 4122,
+              "ram_available_mib": 14292,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1840,
+              "free_mib": 4127,
+              "ram_available_mib": 14337,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1725,
+              "free_mib": 4242,
+              "ram_available_mib": 14390,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1734,
+              "free_mib": 4233,
+              "ram_available_mib": 14349,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1797,
+              "free_mib": 4170,
+              "ram_available_mib": 14259,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1803,
+              "free_mib": 4164,
+              "ram_available_mib": 14217,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1821,
+              "free_mib": 4146,
+              "ram_available_mib": 14217,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1824,
+              "free_mib": 4143,
+              "ram_available_mib": 14216,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1824,
+              "free_mib": 4143,
+              "ram_available_mib": 14200,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1824,
+              "free_mib": 4143,
+              "ram_available_mib": 14197,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1824,
+              "free_mib": 4143,
+              "ram_available_mib": 14197,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1824,
+              "free_mib": 4143,
+              "ram_available_mib": 14197,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1867,
+              "free_mib": 4100,
+              "ram_available_mib": 14197,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1867,
+              "free_mib": 4100,
+              "ram_available_mib": 14181,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1921,
+              "free_mib": 4046,
+              "ram_available_mib": 14166,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1926,
+              "free_mib": 4041,
+              "ram_available_mib": 14147,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1926,
+              "free_mib": 4041,
+              "ram_available_mib": 14165,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1926,
+              "free_mib": 4041,
+              "ram_available_mib": 14163,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1912,
+              "free_mib": 4055,
+              "ram_available_mib": 14167,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1894,
+              "free_mib": 4073,
+              "ram_available_mib": 14151,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1894,
+              "free_mib": 4073,
+              "ram_available_mib": 14151,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1911,
+              "free_mib": 4056,
+              "ram_available_mib": 14149,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1911,
+              "free_mib": 4056,
+              "ram_available_mib": 14151,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1911,
+              "free_mib": 4056,
+              "ram_available_mib": 14151,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1911,
+              "free_mib": 4056,
+              "ram_available_mib": 14150,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1659,
+              "free_mib": 4308,
+              "ram_available_mib": 14150,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1659,
+              "free_mib": 4308,
+              "ram_available_mib": 14134,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1659,
+              "free_mib": 4308,
+              "ram_available_mib": 14133,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1656,
+              "free_mib": 4311,
+              "ram_available_mib": 14131,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1656,
+              "free_mib": 4311,
+              "ram_available_mib": 14137,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1656,
+              "free_mib": 4311,
+              "ram_available_mib": 14136,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1656,
+              "free_mib": 4311,
+              "ram_available_mib": 14137,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1656,
+              "free_mib": 4311,
+              "ram_available_mib": 14138,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1656,
+              "free_mib": 4311,
+              "ram_available_mib": 14120,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1656,
+              "free_mib": 4311,
+              "ram_available_mib": 14131,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1678,
+              "free_mib": 4289,
+              "ram_available_mib": 14143,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1633,
+              "free_mib": 4334,
+              "ram_available_mib": 14143,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1603,
+              "free_mib": 4364,
+              "ram_available_mib": 14143,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1702,
+              "free_mib": 4265,
+              "ram_available_mib": 14141,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1733,
+              "free_mib": 4234,
+              "ram_available_mib": 14138,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1734,
+              "free_mib": 4233,
+              "ram_available_mib": 14147,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1864,
+              "free_mib": 4103,
+              "ram_available_mib": 14131,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 5652,
+              "free_mib": 315,
+              "ram_available_mib": 14119,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 5652,
+              "free_mib": 315,
+              "ram_available_mib": 14119,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 5675,
+              "free_mib": 292,
+              "ram_available_mib": 14088,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 5691,
+              "free_mib": 276,
+              "ram_available_mib": 14065,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 5708,
+              "free_mib": 259,
+              "ram_available_mib": 14036,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 5635,
+              "free_mib": 332,
+              "ram_available_mib": 14019,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 5699,
+              "free_mib": 268,
+              "ram_available_mib": 14019,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 5653,
+              "free_mib": 314,
+              "ram_available_mib": 14031,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 5659,
+              "free_mib": 308,
+              "ram_available_mib": 14031,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 5597,
+              "free_mib": 370,
+              "ram_available_mib": 14039,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 5598,
+              "free_mib": 369,
+              "ram_available_mib": 14023,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 5598,
+              "free_mib": 369,
+              "ram_available_mib": 14023,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 5593,
+              "free_mib": 374,
+              "ram_available_mib": 14031,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 5616,
+              "free_mib": 351,
+              "ram_available_mib": 14016,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 5613,
+              "free_mib": 354,
+              "ram_available_mib": 14016,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 5600,
+              "free_mib": 367,
+              "ram_available_mib": 14000,
+              "ram_total_mib": 15967
+            }
+          ],
+          "peak_used_mib": 5708,
+          "minimum_free_mib": 259,
+          "minimum_ram_available_mib": 14000,
+          "max_rss_kib": 280712
+        },
+        "outcome": "success"
+      },
+      {
+        "model": "qwen3:4b",
+        "role": "2차 방어 검토자",
+        "status": "slm_inference",
+        "model_training": false,
+        "policy_mode": "dry-run",
+        "json_schema_valid": true,
+        "validated_policy": {
+          "policy_id": "multi-ai-dry-run-qwen3-4b",
+          "scope": "simulator-observation",
+          "match": {
+            "source": "CyberBattleSim"
+          },
+          "action": "block_dry_run",
+          "reason": "A business user is executing an untrusted tool during working hours, which could pose a significant security risk.",
+          "rollback": {
+            "mode": "automatic"
+          },
+          "approval_required": true
+        },
+        "risk": "high",
+        "reason": "A business user is executing an untrusted tool during working hours, which could pose a significant security risk.",
+        "action": "block_dry_run",
+        "approval_required": true,
+        "latency_ms": 11869.548,
+        "gpu_memory": {
+          "before_or_during_samples": [
+            {
+              "used_mib": 1451,
+              "free_mib": 4516,
+              "ram_available_mib": 14242,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1451,
+              "free_mib": 4516,
+              "ram_available_mib": 14296,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1400,
+              "free_mib": 4567,
+              "ram_available_mib": 14232,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1457,
+              "free_mib": 4510,
+              "ram_available_mib": 14174,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1375,
+              "free_mib": 4592,
+              "ram_available_mib": 14180,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1445,
+              "free_mib": 4522,
+              "ram_available_mib": 14038,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1376,
+              "free_mib": 4591,
+              "ram_available_mib": 14036,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1400,
+              "free_mib": 4567,
+              "ram_available_mib": 14001,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1447,
+              "free_mib": 4520,
+              "ram_available_mib": 14003,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1456,
+              "free_mib": 4511,
+              "ram_available_mib": 13907,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1447,
+              "free_mib": 4520,
+              "ram_available_mib": 14014,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3823,
+              "free_mib": 2144,
+              "ram_available_mib": 13939,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3823,
+              "free_mib": 2144,
+              "ram_available_mib": 13786,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3805,
+              "free_mib": 2162,
+              "ram_available_mib": 13679,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3714,
+              "free_mib": 2253,
+              "ram_available_mib": 13675,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3706,
+              "free_mib": 2261,
+              "ram_available_mib": 13675,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3696,
+              "free_mib": 2271,
+              "ram_available_mib": 13675,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3696,
+              "free_mib": 2271,
+              "ram_available_mib": 13671,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3696,
+              "free_mib": 2271,
+              "ram_available_mib": 13678,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3696,
+              "free_mib": 2271,
+              "ram_available_mib": 13680,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3696,
+              "free_mib": 2271,
+              "ram_available_mib": 13678,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3696,
+              "free_mib": 2271,
+              "ram_available_mib": 13695,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3696,
+              "free_mib": 2271,
+              "ram_available_mib": 13695,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3696,
+              "free_mib": 2271,
+              "ram_available_mib": 13680,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3696,
+              "free_mib": 2271,
+              "ram_available_mib": 13656,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3694,
+              "free_mib": 2273,
+              "ram_available_mib": 13657,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3694,
+              "free_mib": 2273,
+              "ram_available_mib": 13661,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3694,
+              "free_mib": 2273,
+              "ram_available_mib": 13662,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3694,
+              "free_mib": 2273,
+              "ram_available_mib": 13663,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3694,
+              "free_mib": 2273,
+              "ram_available_mib": 13661,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4413,
+              "free_mib": 1554,
+              "ram_available_mib": 13629,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4447,
+              "free_mib": 1520,
+              "ram_available_mib": 13620,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4451,
+              "free_mib": 1516,
+              "ram_available_mib": 13586,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4451,
+              "free_mib": 1516,
+              "ram_available_mib": 13586,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4451,
+              "free_mib": 1516,
+              "ram_available_mib": 13586,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4451,
+              "free_mib": 1516,
+              "ram_available_mib": 13586,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4451,
+              "free_mib": 1516,
+              "ram_available_mib": 13542,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4385,
+              "free_mib": 1582,
+              "ram_available_mib": 13542,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4385,
+              "free_mib": 1582,
+              "ram_available_mib": 13542,
+              "ram_total_mib": 15967
+            }
+          ],
+          "peak_used_mib": 4451,
+          "minimum_free_mib": 1516,
+          "minimum_ram_available_mib": 13542,
+          "max_rss_kib": 280712
+        },
+        "outcome": "success"
+      },
+      {
+        "model": "gemma3:4b",
+        "role": "독립 위협 분석기",
+        "status": "slm_inference",
+        "model_training": false,
+        "policy_mode": "dry-run",
+        "json_schema_valid": true,
+        "validated_policy": {
+          "policy_id": "multi-ai-dry-run-gemma3-4b",
+          "scope": "simulator-observation",
+          "match": {
+            "source": "CyberBattleSim"
+          },
+          "action": "block_dry_run",
+          "reason": "A business user is executing an untrusted tool with high sensitivity and detected as true, indicating a potential significant security risk.",
+          "rollback": {
+            "mode": "automatic"
+          },
+          "approval_required": true
+        },
+        "risk": "critical",
+        "reason": "A business user is executing an untrusted tool with high sensitivity and detected as true, indicating a potential significant security risk.",
+        "action": "block_dry_run",
+        "approval_required": true,
+        "latency_ms": 18885.199,
+        "gpu_memory": {
+          "before_or_during_samples": [
+            {
+              "used_mib": 1270,
+              "free_mib": 4697,
+              "ram_available_mib": 14186,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1279,
+              "free_mib": 4688,
+              "ram_available_mib": 14204,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1288,
+              "free_mib": 4679,
+              "ram_available_mib": 14120,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1279,
+              "free_mib": 4688,
+              "ram_available_mib": 14159,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1288,
+              "free_mib": 4679,
+              "ram_available_mib": 14018,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1313,
+              "free_mib": 4654,
+              "ram_available_mib": 14194,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1296,
+              "free_mib": 4671,
+              "ram_available_mib": 14029,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1336,
+              "free_mib": 4631,
+              "ram_available_mib": 14024,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1334,
+              "free_mib": 4633,
+              "ram_available_mib": 14123,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1326,
+              "free_mib": 4641,
+              "ram_available_mib": 14017,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1335,
+              "free_mib": 4632,
+              "ram_available_mib": 14189,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1335,
+              "free_mib": 4632,
+              "ram_available_mib": 14099,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1404,
+              "free_mib": 4563,
+              "ram_available_mib": 14015,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1409,
+              "free_mib": 4558,
+              "ram_available_mib": 13947,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1410,
+              "free_mib": 4557,
+              "ram_available_mib": 13882,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1406,
+              "free_mib": 4561,
+              "ram_available_mib": 13803,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1406,
+              "free_mib": 4561,
+              "ram_available_mib": 13708,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1406,
+              "free_mib": 4561,
+              "ram_available_mib": 13622,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1406,
+              "free_mib": 4561,
+              "ram_available_mib": 13510,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1423,
+              "free_mib": 4544,
+              "ram_available_mib": 13426,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1423,
+              "free_mib": 4544,
+              "ram_available_mib": 13335,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1377,
+              "free_mib": 4590,
+              "ram_available_mib": 13249,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1378,
+              "free_mib": 4589,
+              "ram_available_mib": 13177,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1378,
+              "free_mib": 4589,
+              "ram_available_mib": 13882,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1376,
+              "free_mib": 4591,
+              "ram_available_mib": 13883,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1388,
+              "free_mib": 4579,
+              "ram_available_mib": 13859,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1388,
+              "free_mib": 4579,
+              "ram_available_mib": 13842,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1388,
+              "free_mib": 4579,
+              "ram_available_mib": 13842,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3758,
+              "free_mib": 2209,
+              "ram_available_mib": 13796,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3758,
+              "free_mib": 2209,
+              "ram_available_mib": 13646,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3729,
+              "free_mib": 2238,
+              "ram_available_mib": 13524,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3724,
+              "free_mib": 2243,
+              "ram_available_mib": 13394,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3719,
+              "free_mib": 2248,
+              "ram_available_mib": 13312,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3711,
+              "free_mib": 2256,
+              "ram_available_mib": 13313,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3704,
+              "free_mib": 2263,
+              "ram_available_mib": 13323,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3704,
+              "free_mib": 2263,
+              "ram_available_mib": 13342,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3704,
+              "free_mib": 2263,
+              "ram_available_mib": 13346,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3703,
+              "free_mib": 2264,
+              "ram_available_mib": 13349,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3703,
+              "free_mib": 2264,
+              "ram_available_mib": 13346,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3703,
+              "free_mib": 2264,
+              "ram_available_mib": 13362,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3701,
+              "free_mib": 2266,
+              "ram_available_mib": 13364,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3698,
+              "free_mib": 2269,
+              "ram_available_mib": 13361,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3698,
+              "free_mib": 2269,
+              "ram_available_mib": 13358,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3698,
+              "free_mib": 2269,
+              "ram_available_mib": 13367,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3698,
+              "free_mib": 2269,
+              "ram_available_mib": 13364,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3698,
+              "free_mib": 2269,
+              "ram_available_mib": 13385,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4042,
+              "free_mib": 1925,
+              "ram_available_mib": 13342,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4042,
+              "free_mib": 1925,
+              "ram_available_mib": 13330,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4042,
+              "free_mib": 1925,
+              "ram_available_mib": 13149,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4042,
+              "free_mib": 1925,
+              "ram_available_mib": 12955,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4042,
+              "free_mib": 1925,
+              "ram_available_mib": 12766,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4042,
+              "free_mib": 1925,
+              "ram_available_mib": 12592,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4044,
+              "free_mib": 1923,
+              "ram_available_mib": 12521,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4048,
+              "free_mib": 1919,
+              "ram_available_mib": 12433,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4149,
+              "free_mib": 1818,
+              "ram_available_mib": 12432,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4286,
+              "free_mib": 1681,
+              "ram_available_mib": 12432,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4286,
+              "free_mib": 1681,
+              "ram_available_mib": 12432,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4286,
+              "free_mib": 1681,
+              "ram_available_mib": 12432,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4286,
+              "free_mib": 1681,
+              "ram_available_mib": 12392,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4286,
+              "free_mib": 1681,
+              "ram_available_mib": 12392,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4288,
+              "free_mib": 1679,
+              "ram_available_mib": 12375,
+              "ram_total_mib": 15967
+            }
+          ],
+          "peak_used_mib": 4288,
+          "minimum_free_mib": 1679,
+          "minimum_ram_available_mib": 12375,
+          "max_rss_kib": 280712
+        },
+        "outcome": "success"
+      },
+      {
+        "model": "phi4-mini:latest",
+        "role": "정책 논리 검증기",
+        "status": "slm_inference",
+        "model_training": false,
+        "policy_mode": "dry-run",
+        "json_schema_valid": true,
+        "validated_policy": {
+          "policy_id": "multi-ai-dry-run-phi4-mini-latest",
+          "scope": "simulator-observation",
+          "match": {
+            "source": "CyberBattleSim"
+          },
+          "action": "block_dry_run",
+          "reason": "A business user is executing an untrusted tool during working hours, which could pose a significant security risk.",
+          "rollback": {
+            "mode": "automatic"
+          },
+          "approval_required": true
+        },
+        "risk": "high",
+        "reason": "A business user is executing an untrusted tool during working hours, which could pose a significant security risk.",
+        "action": "block_dry_run",
+        "approval_required": true,
+        "latency_ms": 14034.975,
+        "gpu_memory": {
+          "before_or_during_samples": [
+            {
+              "used_mib": 1502,
+              "free_mib": 4465,
+              "ram_available_mib": 13970,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1519,
+              "free_mib": 4448,
+              "ram_available_mib": 13950,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1522,
+              "free_mib": 4445,
+              "ram_available_mib": 13858,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1567,
+              "free_mib": 4400,
+              "ram_available_mib": 13801,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1500,
+              "free_mib": 4467,
+              "ram_available_mib": 13811,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1491,
+              "free_mib": 4476,
+              "ram_available_mib": 13818,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1491,
+              "free_mib": 4476,
+              "ram_available_mib": 13846,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1517,
+              "free_mib": 4450,
+              "ram_available_mib": 13781,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1498,
+              "free_mib": 4469,
+              "ram_available_mib": 13777,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1505,
+              "free_mib": 4462,
+              "ram_available_mib": 13727,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1602,
+              "free_mib": 4365,
+              "ram_available_mib": 13723,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1546,
+              "free_mib": 4421,
+              "ram_available_mib": 13692,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1768,
+              "free_mib": 4199,
+              "ram_available_mib": 13628,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1858,
+              "free_mib": 4109,
+              "ram_available_mib": 13598,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1842,
+              "free_mib": 4125,
+              "ram_available_mib": 13598,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1698,
+              "free_mib": 4269,
+              "ram_available_mib": 13606,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1644,
+              "free_mib": 4323,
+              "ram_available_mib": 13604,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 1648,
+              "free_mib": 4319,
+              "ram_available_mib": 13604,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4046,
+              "free_mib": 1921,
+              "ram_available_mib": 13531,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4046,
+              "free_mib": 1921,
+              "ram_available_mib": 13438,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4036,
+              "free_mib": 1931,
+              "ram_available_mib": 13310,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4036,
+              "free_mib": 1931,
+              "ram_available_mib": 13218,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4036,
+              "free_mib": 1931,
+              "ram_available_mib": 13197,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4073,
+              "free_mib": 1894,
+              "ram_available_mib": 13194,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4036,
+              "free_mib": 1931,
+              "ram_available_mib": 13208,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4016,
+              "free_mib": 1951,
+              "ram_available_mib": 13212,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4016,
+              "free_mib": 1951,
+              "ram_available_mib": 13227,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4016,
+              "free_mib": 1951,
+              "ram_available_mib": 13224,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4016,
+              "free_mib": 1951,
+              "ram_available_mib": 13254,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3953,
+              "free_mib": 2014,
+              "ram_available_mib": 13259,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3948,
+              "free_mib": 2019,
+              "ram_available_mib": 13250,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3907,
+              "free_mib": 2060,
+              "ram_available_mib": 13744,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3907,
+              "free_mib": 2060,
+              "ram_available_mib": 13870,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3907,
+              "free_mib": 2060,
+              "ram_available_mib": 13892,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 3897,
+              "free_mib": 2070,
+              "ram_available_mib": 13891,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4485,
+              "free_mib": 1482,
+              "ram_available_mib": 13864,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4483,
+              "free_mib": 1484,
+              "ram_available_mib": 13840,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4487,
+              "free_mib": 1480,
+              "ram_available_mib": 13786,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4487,
+              "free_mib": 1480,
+              "ram_available_mib": 13771,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4293,
+              "free_mib": 1674,
+              "ram_available_mib": 13754,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4290,
+              "free_mib": 1677,
+              "ram_available_mib": 13737,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4290,
+              "free_mib": 1677,
+              "ram_available_mib": 13726,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4283,
+              "free_mib": 1684,
+              "ram_available_mib": 13725,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4295,
+              "free_mib": 1672,
+              "ram_available_mib": 13677,
+              "ram_total_mib": 15967
+            },
+            {
+              "used_mib": 4295,
+              "free_mib": 1672,
+              "ram_available_mib": 13666,
+              "ram_total_mib": 15967
+            }
+          ],
+          "peak_used_mib": 4487,
+          "minimum_free_mib": 1480,
+          "minimum_ram_available_mib": 13194,
+          "max_rss_kib": 280712
+        },
+        "outcome": "success"
+      }
+    ],
+    "called_model_count": 4,
+    "skipped_model_count": 0,
+    "all_models_validated": true,
+    "defense_result": "success",
+    "opinion_agreement": true,
+    "policy_mode": "dry-run",
+    "approval_required": true,
+    "model_training": false
+  },
+  "policy_applied": false
+}

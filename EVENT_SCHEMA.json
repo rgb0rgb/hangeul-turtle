@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema_version", "event_id", "timestamp_utc", "tenant_id", "site_id", "device_id", "source", "is_demo", "event_type", "evidence", "severity"],
+  "properties": {
+    "schema_version": {"type": "string"}, "event_id": {"type": "string"}, "timestamp_utc": {"type": "string"},
+    "tenant_id": {"type": "string"}, "site_id": {"type": "string"}, "device_id": {"type": "string"},
+    "source": {"type": "string"}, "is_demo": {"const": true}, "event_type": {"type": "string"},
+    "evidence": {"type": "array", "items": {"type": "string"}}, "severity": {"enum": ["low", "medium", "high", "critical"]},
+    "src_ip": {"type": ["string", "null"]}, "dst_ip": {"type": ["string", "null"]}, "protocol": {"type": ["string", "null"]}
+  }
+}

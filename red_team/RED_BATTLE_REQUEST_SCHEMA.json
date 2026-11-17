@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["scenario_id", "environment", "objective", "strategy", "max_steps", "seed"],
+  "properties": {
+    "scenario_id": {"type": "string", "enum": ["red-test-001", "red-test-002", "red-test-003"]},
+    "environment": {"const": "cyberbattlesim"},
+    "objective": {"const": "evaluate_detection"},
+    "strategy": {"type": "string", "enum": ["normal_like_intrusion", "multi_step_simulated_intrusion", "uncertain_observation"]},
+    "max_steps": {"type": "integer", "minimum": 1, "maximum": 8},
+    "seed": {"type": "integer", "minimum": 0, "maximum": 2147483647}
+  }
+}

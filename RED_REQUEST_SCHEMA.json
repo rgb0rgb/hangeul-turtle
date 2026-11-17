@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["scenario_id", "seed"],
+  "properties": {
+    "scenario_id": {"type": "string", "enum": ["login_burst", "iot_new_destination", "file_change_burst", "iot_config_anomaly", "normal_baseline"]},
+    "seed": {"type": "integer", "minimum": 0, "maximum": 2147483647}
+  }
+}

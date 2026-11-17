@@ -1,0 +1,77 @@
+{
+  "source_summary_verified": true,
+  "source_event_count": 31,
+  "source_counts_match": true,
+  "cases": [
+    {
+      "event_id": "longrun-3960a7bedcb54687a4438775351dea04",
+      "timestamp": "2026-11-16T04:54:58Z",
+      "scenario_id": "insider-normal-batch",
+      "kind": "insider",
+      "seed": 1737432989,
+      "ground_truth": "benign",
+      "detection_status": "not_detected",
+      "policy_decision": "allowed",
+      "cause": "true_negative_normal_business",
+      "rule_fix_required": false,
+      "reproducible": true
+    },
+    {
+      "event_id": "longrun-d454a23aa89241ce8d6b0a437c3262ac",
+      "timestamp": "2026-11-16T05:07:35Z",
+      "scenario_id": "insider-normal-batch",
+      "kind": "insider",
+      "seed": 28178984,
+      "ground_truth": "benign",
+      "detection_status": "not_detected",
+      "policy_decision": "allowed",
+      "cause": "true_negative_normal_business",
+      "rule_fix_required": false,
+      "reproducible": true
+    },
+    {
+      "event_id": "longrun-294198e76f0c4f9083118842e319e7fe",
+      "timestamp": "2026-11-16T05:46:11Z",
+      "scenario_id": "red-test-003",
+      "kind": "cyberbattle",
+      "seed": 1071106843,
+      "ground_truth": "uncertain",
+      "detection_status": "unknown",
+      "policy_decision": "unknown",
+      "cause": "abstract_simulator_observation_has_no_ground_truth",
+      "rule_fix_required": false,
+      "reproducible": true
+    },
+    {
+      "event_id": "longrun-772081b7a415440fb9873f97c8ebe819",
+      "timestamp": "2026-11-16T06:46:36Z",
+      "scenario_id": "insider-normal-batch",
+      "kind": "insider",
+      "seed": 257191467,
+      "ground_truth": "benign",
+      "detection_status": "not_detected",
+      "policy_decision": "allowed",
+      "cause": "true_negative_normal_business",
+      "rule_fix_required": false,
+      "reproducible": true
+    },
+    {
+      "event_id": "longrun-56dff6cd8581483ea90a708cb701f188",
+      "timestamp": "2026-11-16T07:35:46Z",
+      "scenario_id": "insider-normal-batch",
+      "kind": "insider",
+      "seed": 1368133555,
+      "ground_truth": "benign",
+      "detection_status": "not_detected",
+      "policy_decision": "allowed",
+      "cause": "true_negative_normal_business",
+      "rule_fix_required": false,
+      "reproducible": true
+    }
+  ],
+  "independent_holdout": {
+    "seed_offset": 100003,
+    "result": "separate_existing_holdout_not_combined",
+    "promoted": false
+  }
+}

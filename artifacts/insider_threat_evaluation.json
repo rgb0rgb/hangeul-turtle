@@ -1,0 +1,767 @@
+{
+  "development": {
+    "detection_rate": 1.0,
+    "false_positive_rate": 0.0,
+    "audit_complete": true
+  },
+  "holdout": {
+    "detection_rate": 1.0,
+    "false_positive_rate": 0.0,
+    "audit_complete": true
+  },
+  "holdout_seed_offset": 100003,
+  "development_results": [
+    {
+      "scenario_id": "insider-normal-batch",
+      "seed": 900001,
+      "expected": "allowed",
+      "event": {
+        "scenario_id": "insider-normal-batch",
+        "seed": 900001,
+        "user_id": "synthetic-user-business_user",
+        "role": "business_user",
+        "device_id": "synthetic-device-01",
+        "session_id": "synthetic-session-900001",
+        "records": 1200,
+        "sensitivity": "internal",
+        "hour": 12,
+        "action": "read",
+        "approved_business_batch": true,
+        "nonce": 1168871775
+      },
+      "analysis": {
+        "risk": "low",
+        "score": 35,
+        "reasons": [
+          "bulk_volume"
+        ],
+        "explicit_policy_violation": false,
+        "independent_rule_engine": true,
+        "decision": "allowed"
+      },
+      "approval": {
+        "request_id": "req-insider-normal-batch",
+        "requester_id": "synthetic-user-business_user",
+        "state": "allowed",
+        "created_at": 1000,
+        "expires_at": 1300,
+        "approver_role": "security_officer",
+        "notification": "not_required"
+      },
+      "audit_integrity": true,
+      "policy_applied": false
+    },
+    {
+      "scenario_id": "insider-user-anomaly",
+      "seed": 900002,
+      "expected": "monitoring",
+      "event": {
+        "scenario_id": "insider-user-anomaly",
+        "seed": 900002,
+        "user_id": "synthetic-user-general_user",
+        "role": "general_user",
+        "device_id": "synthetic-device-01",
+        "session_id": "synthetic-session-900002",
+        "records": 20,
+        "sensitivity": "customer_pii",
+        "hour": 12,
+        "action": "read",
+        "approved_business_batch": false,
+        "new_device": true,
+        "nonce": 1452785424
+      },
+      "analysis": {
+        "risk": "medium",
+        "score": 30,
+        "reasons": [
+          "novel_context"
+        ],
+        "explicit_policy_violation": false,
+        "independent_rule_engine": true,
+        "decision": "monitoring"
+      },
+      "approval": {
+        "request_id": "req-insider-user-anomaly",
+        "requester_id": "synthetic-user-general_user",
+        "state": "monitoring",
+        "created_at": 1000,
+        "expires_at": 1300,
+        "approver_role": "security_officer",
+        "notification": "not_required"
+      },
+      "audit_integrity": true,
+      "policy_applied": false
+    },
+    {
+      "scenario_id": "insider-admin-export",
+      "seed": 900003,
+      "expected": "pending_approval",
+      "event": {
+        "scenario_id": "insider-admin-export",
+        "seed": 900003,
+        "user_id": "synthetic-user-super_admin",
+        "role": "super_admin",
+        "device_id": "synthetic-device-01",
+        "session_id": "synthetic-session-900003",
+        "records": 5000,
+        "sensitivity": "customer_pii",
+        "hour": 12,
+        "action": "bulk_export",
+        "approved_business_batch": false,
+        "external_destination": true,
+        "nonce": 480581342
+      },
+      "analysis": {
+        "risk": "critical",
+        "score": 120,
+        "reasons": [
+          "bulk_volume",
+          "high_risk_action",
+          "external_destination"
+        ],
+        "explicit_policy_violation": true,
+        "independent_rule_engine": true,
+        "decision": "pending_approval"
+      },
+      "approval": {
+        "request_id": "req-insider-admin-export",
+        "requester_id": "synthetic-user-super_admin",
+        "state": "pending_approval",
+        "created_at": 1000,
+        "expires_at": 1300,
+        "approver_role": "security_officer",
+        "notification": "queued"
+      },
+      "audit_integrity": true,
+      "policy_applied": false
+    },
+    {
+      "scenario_id": "insider-off-hours",
+      "seed": 900004,
+      "expected": "monitoring",
+      "event": {
+        "scenario_id": "insider-off-hours",
+        "seed": 900004,
+        "user_id": "synthetic-user-manager",
+        "role": "manager",
+        "device_id": "synthetic-device-01",
+        "session_id": "synthetic-session-900004",
+        "records": 100,
+        "sensitivity": "financial",
+        "hour": 2,
+        "action": "read",
+        "approved_business_batch": false,
+        "nonce": 98310601
+      },
+      "analysis": {
+        "risk": "medium",
+        "score": 30,
+        "reasons": [
+          "off_hours"
+        ],
+        "explicit_policy_violation": false,
+        "independent_rule_engine": true,
+        "decision": "monitoring"
+      },
+      "approval": {
+        "request_id": "req-insider-off-hours",
+        "requester_id": "synthetic-user-manager",
+        "state": "monitoring",
+        "created_at": 1000,
+        "expires_at": 1300,
+        "approver_role": "security_officer",
+        "notification": "not_required"
+      },
+      "audit_integrity": true,
+      "policy_applied": false
+    },
+    {
+      "scenario_id": "insider-blended",
+      "seed": 900005,
+      "expected": "monitoring",
+      "event": {
+        "scenario_id": "insider-blended",
+        "seed": 900005,
+        "user_id": "synthetic-user-business_user",
+        "role": "business_user",
+        "device_id": "synthetic-device-01",
+        "session_id": "synthetic-session-900005",
+        "records": 900,
+        "sensitivity": "customer_pii",
+        "hour": 21,
+        "action": "read",
+        "approved_business_batch": false,
+        "new_location": true,
+        "nonce": 1358775704
+      },
+      "analysis": {
+        "risk": "medium",
+        "score": 30,
+        "reasons": [
+          "novel_context"
+        ],
+        "explicit_policy_violation": false,
+        "independent_rule_engine": true,
+        "decision": "monitoring"
+      },
+      "approval": {
+        "request_id": "req-insider-blended",
+        "requester_id": "synthetic-user-business_user",
+        "state": "monitoring",
+        "created_at": 1000,
+        "expires_at": 1300,
+        "approver_role": "security_officer",
+        "notification": "not_required"
+      },
+      "audit_integrity": true,
+      "policy_applied": false
+    },
+    {
+      "scenario_id": "insider-staged",
+      "seed": 900006,
+      "expected": "pending_approval",
+      "event": {
+        "scenario_id": "insider-staged",
+        "seed": 900006,
+        "user_id": "synthetic-user-system_admin",
+        "role": "system_admin",
+        "device_id": "synthetic-device-01",
+        "session_id": "synthetic-session-900006",
+        "records": 30,
+        "sensitivity": "credentials",
+        "hour": 12,
+        "action": "read",
+        "approved_business_batch": false,
+        "sequence_step": 3,
+        "new_device": true,
+        "nonce": 876476644
+      },
+      "analysis": {
+        "risk": "high",
+        "score": 50,
+        "reasons": [
+          "novel_context",
+          "staged_sequence"
+        ],
+        "explicit_policy_violation": false,
+        "independent_rule_engine": true,
+        "decision": "pending_approval"
+      },
+      "approval": {
+        "request_id": "req-insider-staged",
+        "requester_id": "synthetic-user-system_admin",
+        "state": "pending_approval",
+        "created_at": 1000,
+        "expires_at": 1300,
+        "approver_role": "security_officer",
+        "notification": "queued"
+      },
+      "audit_integrity": true,
+      "policy_applied": false
+    },
+    {
+      "scenario_id": "insider-prompt-doc",
+      "seed": 900007,
+      "expected": "pending_approval",
+      "event": {
+        "scenario_id": "insider-prompt-doc",
+        "seed": 900007,
+        "user_id": "synthetic-user-business_user",
+        "role": "business_user",
+        "device_id": "synthetic-device-01",
+        "session_id": "synthetic-session-900007",
+        "records": 10,
+        "sensitivity": "internal",
+        "hour": 12,
+        "action": "execute_untrusted_tool",
+        "approved_business_batch": false,
+        "untrusted_document": true,
+        "tool_request": "export",
+        "nonce": 212153464
+      },
+      "analysis": {
+        "risk": "high",
+        "score": 70,
+        "reasons": [
+          "high_risk_action",
+          "untrusted_instruction"
+        ],
+        "explicit_policy_violation": true,
+        "independent_rule_engine": true,
+        "decision": "pending_approval"
+      },
+      "approval": {
+        "request_id": "req-insider-prompt-doc",
+        "requester_id": "synthetic-user-business_user",
+        "state": "pending_approval",
+        "created_at": 1000,
+        "expires_at": 1300,
+        "approver_role": "security_officer",
+        "notification": "queued"
+      },
+      "audit_integrity": true,
+      "policy_applied": false
+    },
+    {
+      "scenario_id": "insider-exfil",
+      "seed": 900008,
+      "expected": "pending_approval",
+      "event": {
+        "scenario_id": "insider-exfil",
+        "seed": 900008,
+        "user_id": "synthetic-user-security_officer",
+        "role": "security_officer",
+        "device_id": "synthetic-device-01",
+        "session_id": "synthetic-session-900008",
+        "records": 200,
+        "sensitivity": "customer_pii",
+        "hour": 12,
+        "action": "external_transfer",
+        "approved_business_batch": false,
+        "external_destination": true,
+        "nonce": 482935591
+      },
+      "analysis": {
+        "risk": "critical",
+        "score": 85,
+        "reasons": [
+          "high_risk_action",
+          "external_destination"
+        ],
+        "explicit_policy_violation": true,
+        "independent_rule_engine": true,
+        "decision": "pending_approval"
+      },
+      "approval": {
+        "request_id": "req-insider-exfil",
+        "requester_id": "synthetic-user-security_officer",
+        "state": "pending_approval",
+        "created_at": 1000,
+        "expires_at": 1300,
+        "approver_role": "security_officer",
+        "notification": "queued"
+      },
+      "audit_integrity": true,
+      "policy_applied": false
+    },
+    {
+      "scenario_id": "insider-audit-tamper",
+      "seed": 900009,
+      "expected": "pending_approval",
+      "event": {
+        "scenario_id": "insider-audit-tamper",
+        "seed": 900009,
+        "user_id": "synthetic-user-super_admin",
+        "role": "super_admin",
+        "device_id": "synthetic-device-01",
+        "session_id": "synthetic-session-900009",
+        "records": 10,
+        "sensitivity": "security_audit",
+        "hour": 12,
+        "action": "modify_audit_log",
+        "approved_business_batch": false,
+        "nonce": 1976789618
+      },
+      "analysis": {
+        "risk": "high",
+        "score": 55,
+        "reasons": [
+          "high_risk_action"
+        ],
+        "explicit_policy_violation": true,
+        "independent_rule_engine": true,
+        "decision": "pending_approval"
+      },
+      "approval": {
+        "request_id": "req-insider-audit-tamper",
+        "requester_id": "synthetic-user-super_admin",
+        "state": "pending_approval",
+        "created_at": 1000,
+        "expires_at": 1300,
+        "approver_role": "security_officer",
+        "notification": "queued"
+      },
+      "audit_integrity": true,
+      "policy_applied": false
+    }
+  ],
+  "holdout_results": [
+    {
+      "scenario_id": "insider-normal-batch",
+      "seed": 1000004,
+      "expected": "allowed",
+      "event": {
+        "scenario_id": "insider-normal-batch",
+        "seed": 1000004,
+        "user_id": "synthetic-user-business_user",
+        "role": "business_user",
+        "device_id": "synthetic-device-01",
+        "session_id": "synthetic-session-1000004",
+        "records": 1200,
+        "sensitivity": "internal",
+        "hour": 12,
+        "action": "read",
+        "approved_business_batch": true,
+        "nonce": 2136786007
+      },
+      "analysis": {
+        "risk": "low",
+        "score": 35,
+        "reasons": [
+          "bulk_volume"
+        ],
+        "explicit_policy_violation": false,
+        "independent_rule_engine": true,
+        "decision": "allowed"
+      },
+      "approval": {
+        "request_id": "req-insider-normal-batch",
+        "requester_id": "synthetic-user-business_user",
+        "state": "allowed",
+        "created_at": 1000,
+        "expires_at": 1300,
+        "approver_role": "security_officer",
+        "notification": "not_required"
+      },
+      "audit_integrity": true,
+      "policy_applied": false
+    },
+    {
+      "scenario_id": "insider-user-anomaly",
+      "seed": 1000005,
+      "expected": "monitoring",
+      "event": {
+        "scenario_id": "insider-user-anomaly",
+        "seed": 1000005,
+        "user_id": "synthetic-user-general_user",
+        "role": "general_user",
+        "device_id": "synthetic-device-01",
+        "session_id": "synthetic-session-1000005",
+        "records": 20,
+        "sensitivity": "customer_pii",
+        "hour": 12,
+        "action": "read",
+        "approved_business_batch": false,
+        "new_device": true,
+        "nonce": 1180020530
+      },
+      "analysis": {
+        "risk": "medium",
+        "score": 30,
+        "reasons": [
+          "novel_context"
+        ],
+        "explicit_policy_violation": false,
+        "independent_rule_engine": true,
+        "decision": "monitoring"
+      },
+      "approval": {
+        "request_id": "req-insider-user-anomaly",
+        "requester_id": "synthetic-user-general_user",
+        "state": "monitoring",
+        "created_at": 1000,
+        "expires_at": 1300,
+        "approver_role": "security_officer",
+        "notification": "not_required"
+      },
+      "audit_integrity": true,
+      "policy_applied": false
+    },
+    {
+      "scenario_id": "insider-admin-export",
+      "seed": 1000006,
+      "expected": "pending_approval",
+      "event": {
+        "scenario_id": "insider-admin-export",
+        "seed": 1000006,
+        "user_id": "synthetic-user-super_admin",
+        "role": "super_admin",
+        "device_id": "synthetic-device-01",
+        "session_id": "synthetic-session-1000006",
+        "records": 5000,
+        "sensitivity": "customer_pii",
+        "hour": 12,
+        "action": "bulk_export",
+        "approved_business_batch": false,
+        "external_destination": true,
+        "nonce": 1475583449
+      },
+      "analysis": {
+        "risk": "critical",
+        "score": 120,
+        "reasons": [
+          "bulk_volume",
+          "high_risk_action",
+          "external_destination"
+        ],
+        "explicit_policy_violation": true,
+        "independent_rule_engine": true,
+        "decision": "pending_approval"
+      },
+      "approval": {
+        "request_id": "req-insider-admin-export",
+        "requester_id": "synthetic-user-super_admin",
+        "state": "pending_approval",
+        "created_at": 1000,
+        "expires_at": 1300,
+        "approver_role": "security_officer",
+        "notification": "queued"
+      },
+      "audit_integrity": true,
+      "policy_applied": false
+    },
+    {
+      "scenario_id": "insider-off-hours",
+      "seed": 1000007,
+      "expected": "monitoring",
+      "event": {
+        "scenario_id": "insider-off-hours",
+        "seed": 1000007,
+        "user_id": "synthetic-user-manager",
+        "role": "manager",
+        "device_id": "synthetic-device-01",
+        "session_id": "synthetic-session-1000007",
+        "records": 100,
+        "sensitivity": "financial",
+        "hour": 2,
+        "action": "read",
+        "approved_business_batch": false,
+        "nonce": 1155348599
+      },
+      "analysis": {
+        "risk": "medium",
+        "score": 30,
+        "reasons": [
+          "off_hours"
+        ],
+        "explicit_policy_violation": false,
+        "independent_rule_engine": true,
+        "decision": "monitoring"
+      },
+      "approval": {
+        "request_id": "req-insider-off-hours",
+        "requester_id": "synthetic-user-manager",
+        "state": "monitoring",
+        "created_at": 1000,
+        "expires_at": 1300,
+        "approver_role": "security_officer",
+        "notification": "not_required"
+      },
+      "audit_integrity": true,
+      "policy_applied": false
+    },
+    {
+      "scenario_id": "insider-blended",
+      "seed": 1000008,
+      "expected": "monitoring",
+      "event": {
+        "scenario_id": "insider-blended",
+        "seed": 1000008,
+        "user_id": "synthetic-user-business_user",
+        "role": "business_user",
+        "device_id": "synthetic-device-01",
+        "session_id": "synthetic-session-1000008",
+        "records": 900,
+        "sensitivity": "customer_pii",
+        "hour": 21,
+        "action": "read",
+        "approved_business_batch": false,
+        "new_location": true,
+        "nonce": 1264356853
+      },
+      "analysis": {
+        "risk": "medium",
+        "score": 30,
+        "reasons": [
+          "novel_context"
+        ],
+        "explicit_policy_violation": false,
+        "independent_rule_engine": true,
+        "decision": "monitoring"
+      },
+      "approval": {
+        "request_id": "req-insider-blended",
+        "requester_id": "synthetic-user-business_user",
+        "state": "monitoring",
+        "created_at": 1000,
+        "expires_at": 1300,
+        "approver_role": "security_officer",
+        "notification": "not_required"
+      },
+      "audit_integrity": true,
+      "policy_applied": false
+    },
+    {
+      "scenario_id": "insider-staged",
+      "seed": 1000009,
+      "expected": "pending_approval",
+      "event": {
+        "scenario_id": "insider-staged",
+        "seed": 1000009,
+        "user_id": "synthetic-user-system_admin",
+        "role": "system_admin",
+        "device_id": "synthetic-device-01",
+        "session_id": "synthetic-session-1000009",
+        "records": 30,
+        "sensitivity": "credentials",
+        "hour": 12,
+        "action": "read",
+        "approved_business_batch": false,
+        "sequence_step": 3,
+        "new_device": true,
+        "nonce": 834052010
+      },
+      "analysis": {
+        "risk": "high",
+        "score": 50,
+        "reasons": [
+          "novel_context",
+          "staged_sequence"
+        ],
+        "explicit_policy_violation": false,
+        "independent_rule_engine": true,
+        "decision": "pending_approval"
+      },
+      "approval": {
+        "request_id": "req-insider-staged",
+        "requester_id": "synthetic-user-system_admin",
+        "state": "pending_approval",
+        "created_at": 1000,
+        "expires_at": 1300,
+        "approver_role": "security_officer",
+        "notification": "queued"
+      },
+      "audit_integrity": true,
+      "policy_applied": false
+    },
+    {
+      "scenario_id": "insider-prompt-doc",
+      "seed": 1000010,
+      "expected": "pending_approval",
+      "event": {
+        "scenario_id": "insider-prompt-doc",
+        "seed": 1000010,
+        "user_id": "synthetic-user-business_user",
+        "role": "business_user",
+        "device_id": "synthetic-device-01",
+        "session_id": "synthetic-session-1000010",
+        "records": 10,
+        "sensitivity": "internal",
+        "hour": 12,
+        "action": "execute_untrusted_tool",
+        "approved_business_batch": false,
+        "untrusted_document": true,
+        "tool_request": "export",
+        "nonce": 1053888073
+      },
+      "analysis": {
+        "risk": "high",
+        "score": 70,
+        "reasons": [
+          "high_risk_action",
+          "untrusted_instruction"
+        ],
+        "explicit_policy_violation": true,
+        "independent_rule_engine": true,
+        "decision": "pending_approval"
+      },
+      "approval": {
+        "request_id": "req-insider-prompt-doc",
+        "requester_id": "synthetic-user-business_user",
+        "state": "pending_approval",
+        "created_at": 1000,
+        "expires_at": 1300,
+        "approver_role": "security_officer",
+        "notification": "queued"
+      },
+      "audit_integrity": true,
+      "policy_applied": false
+    },
+    {
+      "scenario_id": "insider-exfil",
+      "seed": 1000011,
+      "expected": "pending_approval",
+      "event": {
+        "scenario_id": "insider-exfil",
+        "seed": 1000011,
+        "user_id": "synthetic-user-security_officer",
+        "role": "security_officer",
+        "device_id": "synthetic-device-01",
+        "session_id": "synthetic-session-1000011",
+        "records": 200,
+        "sensitivity": "customer_pii",
+        "hour": 12,
+        "action": "external_transfer",
+        "approved_business_batch": false,
+        "external_destination": true,
+        "nonce": 1346021503
+      },
+      "analysis": {
+        "risk": "critical",
+        "score": 85,
+        "reasons": [
+          "high_risk_action",
+          "external_destination"
+        ],
+        "explicit_policy_violation": true,
+        "independent_rule_engine": true,
+        "decision": "pending_approval"
+      },
+      "approval": {
+        "request_id": "req-insider-exfil",
+        "requester_id": "synthetic-user-security_officer",
+        "state": "pending_approval",
+        "created_at": 1000,
+        "expires_at": 1300,
+        "approver_role": "security_officer",
+        "notification": "queued"
+      },
+      "audit_integrity": true,
+      "policy_applied": false
+    },
+    {
+      "scenario_id": "insider-audit-tamper",
+      "seed": 1000012,
+      "expected": "pending_approval",
+      "event": {
+        "scenario_id": "insider-audit-tamper",
+        "seed": 1000012,
+        "user_id": "synthetic-user-super_admin",
+        "role": "super_admin",
+        "device_id": "synthetic-device-01",
+        "session_id": "synthetic-session-1000012",
+        "records": 10,
+        "sensitivity": "security_audit",
+        "hour": 12,
+        "action": "modify_audit_log",
+        "approved_business_batch": false,
+        "nonce": 1719042981
+      },
+      "analysis": {
+        "risk": "high",
+        "score": 55,
+        "reasons": [
+          "high_risk_action"
+        ],
+        "explicit_policy_violation": true,
+        "independent_rule_engine": true,
+        "decision": "pending_approval"
+      },
+      "approval": {
+        "request_id": "req-insider-audit-tamper",
+        "requester_id": "synthetic-user-super_admin",
+        "state": "pending_approval",
+        "created_at": 1000,
+        "expires_at": 1300,
+        "approver_role": "security_officer",
+        "notification": "queued"
+      },
+      "audit_integrity": true,
+      "policy_applied": false
+    }
+  ],
+  "policy_promotion": {
+    "promoted": false,
+    "reason": "evaluation is report-only; no automatic promotion"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "login_burst": {"event_type": "auth_failure_burst", "severity": "medium", "count": 5, "device_id": "demo-cam-01"},
+  "iot_new_destination": {"event_type": "new_destination", "severity": "high", "count": 1, "device_id": "demo-plug-01"},
+  "file_change_burst": {"event_type": "file_change_burst", "severity": "high", "count": 3, "device_id": "demo-pc-01"},
+  "iot_config_anomaly": {"event_type": "iot_config_anomaly", "severity": "medium", "count": 1, "device_id": "demo-plug-01"},
+  "normal_baseline": {"event_type": "normal_activity", "severity": "low", "count": 5, "device_id": "demo-phone-01"}
+}

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["policy_id", "scope", "match", "action", "reason", "rollback", "approval_required"],
+  "properties": {
+    "policy_id": {"type": "string"}, "scope": {"type": "string"}, "match": {"type": "object"},
+    "action": {"enum": ["observe", "block_dry_run"]}, "expires_at": {"type": ["string", "null"]},
+    "reason": {"type": "string"}, "rollback": {"type": "object"}, "approval_required": {"const": true}
+  }
+}

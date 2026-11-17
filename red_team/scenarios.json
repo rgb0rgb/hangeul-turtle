@@ -1,0 +1,5 @@
+{
+  "red-test-001": {"strategy": "normal_like_intrusion", "simulator_scenario": "login_burst", "truth": "attack"},
+  "red-test-002": {"strategy": "multi_step_simulated_intrusion", "simulator_scenario": "file_change_burst", "truth": "attack"},
+  "red-test-003": {"strategy": "uncertain_observation", "simulator_scenario": "normal_baseline", "truth": "uncertain"}
+}

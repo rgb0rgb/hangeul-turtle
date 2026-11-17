@@ -1,0 +1,310 @@
+{
+  "run_id": "red-run-d79baa1cd83e4b6f875bea714f457be8",
+  "red_request": {
+    "scenario_id": "red-test-002",
+    "environment": "cyberbattlesim",
+    "objective": "evaluate_detection",
+    "strategy": "multi_step_simulated_intrusion",
+    "max_steps": 3,
+    "seed": 100010
+  },
+  "execution_status": "actual",
+  "execution": {
+    "adapter": "cyberbattle",
+    "execution_status": "actual",
+    "scenario_id": "file_change_burst",
+    "seed": 100010,
+    "events": [
+      {
+        "schema_version": "1.0",
+        "event_id": "demo-100010-0000",
+        "timestamp_utc": "2026-01-01T00:00:00+00:00",
+        "tenant_id": "demo-tenant",
+        "site_id": "demo-site",
+        "device_id": "demo-pc-01",
+        "source": "synthetic-simulator",
+        "is_demo": true,
+        "src_ip": "198.51.100.17",
+        "src_port": 40000,
+        "dst_ip": "192.0.2.10",
+        "dst_port": 443,
+        "protocol": "TCP",
+        "direction": "egress",
+        "event_type": "file_change_burst",
+        "evidence": [
+          "synthetic file_change_burst event 1"
+        ],
+        "severity": "high",
+        "model_version": "none",
+        "policy_version": "baseline"
+      },
+      {
+        "schema_version": "1.0",
+        "event_id": "demo-100010-0001",
+        "timestamp_utc": "2026-01-01T00:00:01+00:00",
+        "tenant_id": "demo-tenant",
+        "site_id": "demo-site",
+        "device_id": "demo-pc-01",
+        "source": "synthetic-simulator",
+        "is_demo": true,
+        "src_ip": "198.51.100.20",
+        "src_port": 40001,
+        "dst_ip": "192.0.2.10",
+        "dst_port": 443,
+        "protocol": "TCP",
+        "direction": "egress",
+        "event_type": "file_change_burst",
+        "evidence": [
+          "synthetic file_change_burst event 2"
+        ],
+        "severity": "high",
+        "model_version": "none",
+        "policy_version": "baseline"
+      },
+      {
+        "schema_version": "1.0",
+        "event_id": "demo-100010-0002",
+        "timestamp_utc": "2026-01-01T00:00:02+00:00",
+        "tenant_id": "demo-tenant",
+        "site_id": "demo-site",
+        "device_id": "demo-pc-01",
+        "source": "synthetic-simulator",
+        "is_demo": true,
+        "src_ip": "198.51.100.17",
+        "src_port": 40002,
+        "dst_ip": "192.0.2.10",
+        "dst_port": 443,
+        "protocol": "TCP",
+        "direction": "egress",
+        "event_type": "file_change_burst",
+        "evidence": [
+          "synthetic file_change_burst event 3"
+        ],
+        "severity": "high",
+        "model_version": "none",
+        "policy_version": "baseline"
+      }
+    ],
+    "trace": [
+      {
+        "step": 1,
+        "reward": 14.0,
+        "terminated": false,
+        "truncated": false
+      },
+      {
+        "step": 2,
+        "reward": 0.0,
+        "terminated": false,
+        "truncated": false
+      },
+      {
+        "step": 3,
+        "reward": 0.0,
+        "terminated": false,
+        "truncated": false
+      }
+    ],
+    "blue_observations": [
+      {
+        "step": 1,
+        "source": "CyberBattleSim",
+        "classification": "abstract_observation",
+        "detected": null,
+        "observation_shape": {
+          "type": "dict",
+          "field_count": 14,
+          "fields": [
+            "_discovered_nodes",
+            "_explored_network",
+            "action_mask",
+            "credential_cache_length",
+            "credential_cache_matrix",
+            "customer_data_found",
+            "discovered_node_count",
+            "discovered_nodes_properties",
+            "escalation",
+            "lateral_move",
+            "leaked_credentials",
+            "newly_discovered_nodes_count",
+            "nodes_privilegelevel",
+            "probe_result"
+          ]
+        },
+        "response": "observe_only",
+        "policy_mode": "dry-run",
+        "approval_required": true,
+        "policy_candidate": {
+          "policy_id": "cyberbattle-observe-only",
+          "scope": "simulator-observation",
+          "match": {
+            "source": "CyberBattleSim"
+          },
+          "action": "observe",
+          "reason": "독립 평가 및 관리자 승인 필요",
+          "rollback": {
+            "mode": "automatic"
+          },
+          "approval_required": true
+        }
+      },
+      {
+        "step": 2,
+        "source": "CyberBattleSim",
+        "classification": "abstract_observation",
+        "detected": null,
+        "observation_shape": {
+          "type": "dict",
+          "field_count": 14,
+          "fields": [
+            "_discovered_nodes",
+            "_explored_network",
+            "action_mask",
+            "credential_cache_length",
+            "credential_cache_matrix",
+            "customer_data_found",
+            "discovered_node_count",
+            "discovered_nodes_properties",
+            "escalation",
+            "lateral_move",
+            "leaked_credentials",
+            "newly_discovered_nodes_count",
+            "nodes_privilegelevel",
+            "probe_result"
+          ]
+        },
+        "response": "observe_only",
+        "policy_mode": "dry-run",
+        "approval_required": true,
+        "policy_candidate": {
+          "policy_id": "cyberbattle-observe-only",
+          "scope": "simulator-observation",
+          "match": {
+            "source": "CyberBattleSim"
+          },
+          "action": "observe",
+          "reason": "독립 평가 및 관리자 승인 필요",
+          "rollback": {
+            "mode": "automatic"
+          },
+          "approval_required": true
+        }
+      },
+      {
+        "step": 3,
+        "source": "CyberBattleSim",
+        "classification": "abstract_observation",
+        "detected": null,
+        "observation_shape": {
+          "type": "dict",
+          "field_count": 14,
+          "fields": [
+            "_discovered_nodes",
+            "_explored_network",
+            "action_mask",
+            "credential_cache_length",
+            "credential_cache_matrix",
+            "customer_data_found",
+            "discovered_node_count",
+            "discovered_nodes_properties",
+            "escalation",
+            "lateral_move",
+            "leaked_credentials",
+            "newly_discovered_nodes_count",
+            "nodes_privilegelevel",
+            "probe_result"
+          ]
+        },
+        "response": "observe_only",
+        "policy_mode": "dry-run",
+        "approval_required": true,
+        "policy_candidate": {
+          "policy_id": "cyberbattle-observe-only",
+          "scope": "simulator-observation",
+          "match": {
+            "source": "CyberBattleSim"
+          },
+          "action": "observe",
+          "reason": "독립 평가 및 관리자 승인 필요",
+          "rollback": {
+            "mode": "automatic"
+          },
+          "approval_required": true
+        }
+      }
+    ],
+    "is_demo": true,
+    "external_network": false,
+    "executor": "docker",
+    "latency_ms": 6434.978
+  },
+  "blue": {
+    "events": [
+      {
+        "event_id": "demo-100010-0000",
+        "detected": true,
+        "reason": "허용된 합성 시나리오의 이상 징후",
+        "policy_candidate": {
+          "policy_id": "dry-run-demo-100010-0000",
+          "scope": "demo-pc-01",
+          "match": {
+            "event_type": "file_change_burst"
+          },
+          "action": "block_dry_run",
+          "reason": "독립 검증 및 관리자 승인 필요",
+          "rollback": {
+            "mode": "automatic"
+          },
+          "approval_required": true
+        }
+      },
+      {
+        "event_id": "demo-100010-0001",
+        "detected": true,
+        "reason": "허용된 합성 시나리오의 이상 징후",
+        "policy_candidate": {
+          "policy_id": "dry-run-demo-100010-0001",
+          "scope": "demo-pc-01",
+          "match": {
+            "event_type": "file_change_burst"
+          },
+          "action": "block_dry_run",
+          "reason": "독립 검증 및 관리자 승인 필요",
+          "rollback": {
+            "mode": "automatic"
+          },
+          "approval_required": true
+        }
+      },
+      {
+        "event_id": "demo-100010-0002",
+        "detected": true,
+        "reason": "허용된 합성 시나리오의 이상 징후",
+        "policy_candidate": {
+          "policy_id": "dry-run-demo-100010-0002",
+          "scope": "demo-pc-01",
+          "match": {
+            "event_type": "file_change_burst"
+          },
+          "action": "block_dry_run",
+          "reason": "독립 검증 및 관리자 승인 필요",
+          "rollback": {
+            "mode": "automatic"
+          },
+          "approval_required": true
+        }
+      }
+    ],
+    "policy_mode": "dry-run",
+    "approval_required": true
+  },
+  "independent_evaluation": {
+    "detection_status": "detected",
+    "blocking_status": "unknown",
+    "overall_status": "unknown",
+    "reason": "CyberBattleSim abstract state provides no blocking evidence",
+    "blue_claims_ignored": true
+  },
+  "policy_applied": false,
+  "external_network": false
+}

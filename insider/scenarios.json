@@ -1,0 +1,11 @@
+{
+  "insider-normal-batch": {"attack_type":"normal_business_batch", "role":"business_user", "expected":"allowed"},
+  "insider-user-anomaly": {"attack_type":"abnormal_access", "role":"general_user", "expected":"monitoring"},
+  "insider-admin-export": {"attack_type":"privileged_bulk_export", "role":"super_admin", "expected":"pending_approval"},
+  "insider-off-hours": {"attack_type":"off_hours_sensitive_work", "role":"manager", "expected":"monitoring"},
+  "insider-blended": {"attack_type":"blended_suspicious_activity", "role":"business_user", "expected":"monitoring"},
+  "insider-staged": {"attack_type":"staged_intrusion", "role":"system_admin", "expected":"pending_approval"},
+  "insider-prompt-doc": {"attack_type":"untrusted_document_instruction", "role":"business_user", "expected":"pending_approval"},
+  "insider-exfil": {"attack_type":"unauthorized_external_transfer", "role":"security_officer", "expected":"pending_approval"},
+  "insider-audit-tamper": {"attack_type":"audit_log_tamper", "role":"super_admin", "expected":"pending_approval"}
+}

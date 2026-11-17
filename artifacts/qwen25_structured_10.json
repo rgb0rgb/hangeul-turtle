@@ -1,0 +1,2096 @@
+{
+  "model": "qwen2.5:7b",
+  "repetitions": 10,
+  "observation": {
+    "step": 1,
+    "source": "CyberBattleSim",
+    "classification": "abstract_observation",
+    "detected": null,
+    "observation_shape": {
+      "type": "dict",
+      "field_count": 14,
+      "fields": [
+        "_discovered_nodes",
+        "_explored_network",
+        "action_mask",
+        "credential_cache_length",
+        "credential_cache_matrix",
+        "customer_data_found",
+        "discovered_node_count",
+        "discovered_nodes_properties",
+        "escalation",
+        "lateral_move",
+        "leaked_credentials",
+        "newly_discovered_nodes_count",
+        "nodes_privilegelevel",
+        "probe_result"
+      ]
+    },
+    "response": "observe_only",
+    "policy_mode": "dry-run",
+    "approval_required": true,
+    "policy_candidate": {
+      "policy_id": "cyberbattle-observe-only",
+      "scope": "simulator-observation",
+      "match": {
+        "source": "CyberBattleSim"
+      },
+      "action": "observe",
+      "reason": "독립 평가 및 관리자 승인 필요",
+      "rollback": {
+        "mode": "automatic"
+      },
+      "approval_required": true
+    }
+  },
+  "success_count": 10,
+  "success_rate": 1.0,
+  "results": [
+    {
+      "model": "qwen2.5:7b",
+      "role": "기준 방어 분류기",
+      "status": "slm_inference",
+      "model_training": false,
+      "policy_mode": "dry-run",
+      "json_schema_valid": true,
+      "validated_policy": {
+        "policy_id": "multi-ai-dry-run-qwen2.5-7b",
+        "scope": "simulator-observation",
+        "match": {
+          "source": "CyberBattleSim"
+        },
+        "action": "observe",
+        "reason": "독립 평가 및 관리자 승인 필요",
+        "rollback": {
+          "mode": "automatic"
+        },
+        "approval_required": true
+      },
+      "risk": "low",
+      "reason": "독립 평가 및 관리자 승인 필요",
+      "action": "observe",
+      "approval_required": true,
+      "latency_ms": 18478.98,
+      "gpu_memory": {
+        "before_or_during_samples": [
+          {
+            "used_mib": 1807,
+            "free_mib": 4160
+          },
+          {
+            "used_mib": 1651,
+            "free_mib": 4316
+          },
+          {
+            "used_mib": 1659,
+            "free_mib": 4308
+          },
+          {
+            "used_mib": 1810,
+            "free_mib": 4157
+          },
+          {
+            "used_mib": 1779,
+            "free_mib": 4188
+          },
+          {
+            "used_mib": 1850,
+            "free_mib": 4117
+          },
+          {
+            "used_mib": 1778,
+            "free_mib": 4189
+          },
+          {
+            "used_mib": 1727,
+            "free_mib": 4240
+          },
+          {
+            "used_mib": 1760,
+            "free_mib": 4207
+          },
+          {
+            "used_mib": 1760,
+            "free_mib": 4207
+          },
+          {
+            "used_mib": 1760,
+            "free_mib": 4207
+          },
+          {
+            "used_mib": 1760,
+            "free_mib": 4207
+          },
+          {
+            "used_mib": 1755,
+            "free_mib": 4212
+          },
+          {
+            "used_mib": 1755,
+            "free_mib": 4212
+          },
+          {
+            "used_mib": 1755,
+            "free_mib": 4212
+          },
+          {
+            "used_mib": 1755,
+            "free_mib": 4212
+          },
+          {
+            "used_mib": 1755,
+            "free_mib": 4212
+          },
+          {
+            "used_mib": 1755,
+            "free_mib": 4212
+          },
+          {
+            "used_mib": 1755,
+            "free_mib": 4212
+          },
+          {
+            "used_mib": 1755,
+            "free_mib": 4212
+          },
+          {
+            "used_mib": 1755,
+            "free_mib": 4212
+          },
+          {
+            "used_mib": 1755,
+            "free_mib": 4212
+          },
+          {
+            "used_mib": 1755,
+            "free_mib": 4212
+          },
+          {
+            "used_mib": 1755,
+            "free_mib": 4212
+          },
+          {
+            "used_mib": 1755,
+            "free_mib": 4212
+          },
+          {
+            "used_mib": 1755,
+            "free_mib": 4212
+          },
+          {
+            "used_mib": 1755,
+            "free_mib": 4212
+          },
+          {
+            "used_mib": 1755,
+            "free_mib": 4212
+          },
+          {
+            "used_mib": 1755,
+            "free_mib": 4212
+          },
+          {
+            "used_mib": 1755,
+            "free_mib": 4212
+          },
+          {
+            "used_mib": 1755,
+            "free_mib": 4212
+          },
+          {
+            "used_mib": 1755,
+            "free_mib": 4212
+          },
+          {
+            "used_mib": 1755,
+            "free_mib": 4212
+          },
+          {
+            "used_mib": 1755,
+            "free_mib": 4212
+          },
+          {
+            "used_mib": 1548,
+            "free_mib": 4419
+          },
+          {
+            "used_mib": 1551,
+            "free_mib": 4416
+          },
+          {
+            "used_mib": 1654,
+            "free_mib": 4313
+          },
+          {
+            "used_mib": 1916,
+            "free_mib": 4051
+          },
+          {
+            "used_mib": 1916,
+            "free_mib": 4051
+          },
+          {
+            "used_mib": 1899,
+            "free_mib": 4068
+          },
+          {
+            "used_mib": 1899,
+            "free_mib": 4068
+          },
+          {
+            "used_mib": 3490,
+            "free_mib": 2477
+          },
+          {
+            "used_mib": 5603,
+            "free_mib": 364
+          },
+          {
+            "used_mib": 5610,
+            "free_mib": 357
+          },
+          {
+            "used_mib": 5747,
+            "free_mib": 220
+          },
+          {
+            "used_mib": 5749,
+            "free_mib": 218
+          },
+          {
+            "used_mib": 5755,
+            "free_mib": 212
+          },
+          {
+            "used_mib": 5755,
+            "free_mib": 212
+          },
+          {
+            "used_mib": 5738,
+            "free_mib": 229
+          },
+          {
+            "used_mib": 5757,
+            "free_mib": 210
+          },
+          {
+            "used_mib": 5757,
+            "free_mib": 210
+          },
+          {
+            "used_mib": 5757,
+            "free_mib": 210
+          },
+          {
+            "used_mib": 5754,
+            "free_mib": 213
+          },
+          {
+            "used_mib": 5744,
+            "free_mib": 223
+          },
+          {
+            "used_mib": 5646,
+            "free_mib": 321
+          },
+          {
+            "used_mib": 5646,
+            "free_mib": 321
+          },
+          {
+            "used_mib": 5635,
+            "free_mib": 332
+          },
+          {
+            "used_mib": 5630,
+            "free_mib": 337
+          },
+          {
+            "used_mib": 5613,
+            "free_mib": 354
+          },
+          {
+            "used_mib": 5574,
+            "free_mib": 393
+          }
+        ],
+        "peak_used_mib": 5757,
+        "minimum_free_mib": 210
+      },
+      "outcome": "unknown",
+      "repetition": 1
+    },
+    {
+      "model": "qwen2.5:7b",
+      "role": "기준 방어 분류기",
+      "status": "slm_inference",
+      "model_training": false,
+      "policy_mode": "dry-run",
+      "json_schema_valid": true,
+      "validated_policy": {
+        "policy_id": "multi-ai-dry-run-qwen2.5-7b",
+        "scope": "simulator-observation",
+        "match": {
+          "source": "CyberBattleSim"
+        },
+        "action": "observe",
+        "reason": "독립 평가 및 관리자 승인 필요",
+        "rollback": {
+          "mode": "automatic"
+        },
+        "approval_required": true
+      },
+      "risk": "low",
+      "reason": "독립 평가 및 관리자 승인 필요",
+      "action": "observe",
+      "approval_required": true,
+      "latency_ms": 12199.174,
+      "gpu_memory": {
+        "before_or_during_samples": [
+          {
+            "used_mib": 1461,
+            "free_mib": 4506
+          },
+          {
+            "used_mib": 1461,
+            "free_mib": 4506
+          },
+          {
+            "used_mib": 1470,
+            "free_mib": 4497
+          },
+          {
+            "used_mib": 1461,
+            "free_mib": 4506
+          },
+          {
+            "used_mib": 1470,
+            "free_mib": 4497
+          },
+          {
+            "used_mib": 1461,
+            "free_mib": 4506
+          },
+          {
+            "used_mib": 1458,
+            "free_mib": 4509
+          },
+          {
+            "used_mib": 1472,
+            "free_mib": 4495
+          },
+          {
+            "used_mib": 1440,
+            "free_mib": 4527
+          },
+          {
+            "used_mib": 1509,
+            "free_mib": 4458
+          },
+          {
+            "used_mib": 1451,
+            "free_mib": 4516
+          },
+          {
+            "used_mib": 1466,
+            "free_mib": 4501
+          },
+          {
+            "used_mib": 1520,
+            "free_mib": 4447
+          },
+          {
+            "used_mib": 1520,
+            "free_mib": 4447
+          },
+          {
+            "used_mib": 1520,
+            "free_mib": 4447
+          },
+          {
+            "used_mib": 1520,
+            "free_mib": 4447
+          },
+          {
+            "used_mib": 1520,
+            "free_mib": 4447
+          },
+          {
+            "used_mib": 1503,
+            "free_mib": 4464
+          },
+          {
+            "used_mib": 1503,
+            "free_mib": 4464
+          },
+          {
+            "used_mib": 1520,
+            "free_mib": 4447
+          },
+          {
+            "used_mib": 1520,
+            "free_mib": 4447
+          },
+          {
+            "used_mib": 5138,
+            "free_mib": 829
+          },
+          {
+            "used_mib": 5138,
+            "free_mib": 829
+          },
+          {
+            "used_mib": 5138,
+            "free_mib": 829
+          },
+          {
+            "used_mib": 5524,
+            "free_mib": 443
+          },
+          {
+            "used_mib": 5532,
+            "free_mib": 435
+          },
+          {
+            "used_mib": 5532,
+            "free_mib": 435
+          },
+          {
+            "used_mib": 5532,
+            "free_mib": 435
+          },
+          {
+            "used_mib": 5532,
+            "free_mib": 435
+          },
+          {
+            "used_mib": 5532,
+            "free_mib": 435
+          },
+          {
+            "used_mib": 5532,
+            "free_mib": 435
+          },
+          {
+            "used_mib": 5532,
+            "free_mib": 435
+          },
+          {
+            "used_mib": 5532,
+            "free_mib": 435
+          },
+          {
+            "used_mib": 5532,
+            "free_mib": 435
+          },
+          {
+            "used_mib": 5532,
+            "free_mib": 435
+          },
+          {
+            "used_mib": 5532,
+            "free_mib": 435
+          },
+          {
+            "used_mib": 5532,
+            "free_mib": 435
+          },
+          {
+            "used_mib": 5532,
+            "free_mib": 435
+          },
+          {
+            "used_mib": 5531,
+            "free_mib": 436
+          },
+          {
+            "used_mib": 5529,
+            "free_mib": 438
+          }
+        ],
+        "peak_used_mib": 5532,
+        "minimum_free_mib": 435
+      },
+      "outcome": "unknown",
+      "repetition": 2
+    },
+    {
+      "model": "qwen2.5:7b",
+      "role": "기준 방어 분류기",
+      "status": "slm_inference",
+      "model_training": false,
+      "policy_mode": "dry-run",
+      "json_schema_valid": true,
+      "validated_policy": {
+        "policy_id": "multi-ai-dry-run-qwen2.5-7b",
+        "scope": "simulator-observation",
+        "match": {
+          "source": "CyberBattleSim"
+        },
+        "action": "observe",
+        "reason": "독립 평가 및 관리자 승인 필요",
+        "rollback": {
+          "mode": "automatic"
+        },
+        "approval_required": true
+      },
+      "risk": "low",
+      "reason": "독립 평가 및 관리자 승인 필요",
+      "action": "observe",
+      "approval_required": true,
+      "latency_ms": 12398.848,
+      "gpu_memory": {
+        "before_or_during_samples": [
+          {
+            "used_mib": 1447,
+            "free_mib": 4520
+          },
+          {
+            "used_mib": 1447,
+            "free_mib": 4520
+          },
+          {
+            "used_mib": 1456,
+            "free_mib": 4511
+          },
+          {
+            "used_mib": 1447,
+            "free_mib": 4520
+          },
+          {
+            "used_mib": 1462,
+            "free_mib": 4505
+          },
+          {
+            "used_mib": 1447,
+            "free_mib": 4520
+          },
+          {
+            "used_mib": 1447,
+            "free_mib": 4520
+          },
+          {
+            "used_mib": 1516,
+            "free_mib": 4451
+          },
+          {
+            "used_mib": 1447,
+            "free_mib": 4520
+          },
+          {
+            "used_mib": 1516,
+            "free_mib": 4451
+          },
+          {
+            "used_mib": 1447,
+            "free_mib": 4520
+          },
+          {
+            "used_mib": 1464,
+            "free_mib": 4503
+          },
+          {
+            "used_mib": 1516,
+            "free_mib": 4451
+          },
+          {
+            "used_mib": 1516,
+            "free_mib": 4451
+          },
+          {
+            "used_mib": 1516,
+            "free_mib": 4451
+          },
+          {
+            "used_mib": 1516,
+            "free_mib": 4451
+          },
+          {
+            "used_mib": 1516,
+            "free_mib": 4451
+          },
+          {
+            "used_mib": 1516,
+            "free_mib": 4451
+          },
+          {
+            "used_mib": 1499,
+            "free_mib": 4468
+          },
+          {
+            "used_mib": 1516,
+            "free_mib": 4451
+          },
+          {
+            "used_mib": 1516,
+            "free_mib": 4451
+          },
+          {
+            "used_mib": 5134,
+            "free_mib": 833
+          },
+          {
+            "used_mib": 5134,
+            "free_mib": 833
+          },
+          {
+            "used_mib": 5134,
+            "free_mib": 833
+          },
+          {
+            "used_mib": 5520,
+            "free_mib": 447
+          },
+          {
+            "used_mib": 5505,
+            "free_mib": 462
+          },
+          {
+            "used_mib": 5528,
+            "free_mib": 439
+          },
+          {
+            "used_mib": 5528,
+            "free_mib": 439
+          },
+          {
+            "used_mib": 5528,
+            "free_mib": 439
+          },
+          {
+            "used_mib": 5528,
+            "free_mib": 439
+          },
+          {
+            "used_mib": 5528,
+            "free_mib": 439
+          },
+          {
+            "used_mib": 5528,
+            "free_mib": 439
+          },
+          {
+            "used_mib": 5528,
+            "free_mib": 439
+          },
+          {
+            "used_mib": 5528,
+            "free_mib": 439
+          },
+          {
+            "used_mib": 5528,
+            "free_mib": 439
+          },
+          {
+            "used_mib": 5528,
+            "free_mib": 439
+          },
+          {
+            "used_mib": 5528,
+            "free_mib": 439
+          },
+          {
+            "used_mib": 5528,
+            "free_mib": 439
+          },
+          {
+            "used_mib": 5528,
+            "free_mib": 439
+          },
+          {
+            "used_mib": 5528,
+            "free_mib": 439
+          }
+        ],
+        "peak_used_mib": 5528,
+        "minimum_free_mib": 439
+      },
+      "outcome": "unknown",
+      "repetition": 3
+    },
+    {
+      "model": "qwen2.5:7b",
+      "role": "기준 방어 분류기",
+      "status": "slm_inference",
+      "model_training": false,
+      "policy_mode": "dry-run",
+      "json_schema_valid": true,
+      "validated_policy": {
+        "policy_id": "multi-ai-dry-run-qwen2.5-7b",
+        "scope": "simulator-observation",
+        "match": {
+          "source": "CyberBattleSim"
+        },
+        "action": "observe",
+        "reason": "독립 평가 및 관리자 승인 필요",
+        "rollback": {
+          "mode": "automatic"
+        },
+        "approval_required": true
+      },
+      "risk": "low",
+      "reason": "독립 평가 및 관리자 승인 필요",
+      "action": "observe",
+      "approval_required": true,
+      "latency_ms": 12405.205,
+      "gpu_memory": {
+        "before_or_during_samples": [
+          {
+            "used_mib": 1447,
+            "free_mib": 4520
+          },
+          {
+            "used_mib": 1430,
+            "free_mib": 4537
+          },
+          {
+            "used_mib": 1456,
+            "free_mib": 4511
+          },
+          {
+            "used_mib": 1447,
+            "free_mib": 4520
+          },
+          {
+            "used_mib": 1460,
+            "free_mib": 4507
+          },
+          {
+            "used_mib": 1447,
+            "free_mib": 4520
+          },
+          {
+            "used_mib": 1447,
+            "free_mib": 4520
+          },
+          {
+            "used_mib": 1462,
+            "free_mib": 4505
+          },
+          {
+            "used_mib": 1444,
+            "free_mib": 4523
+          },
+          {
+            "used_mib": 1511,
+            "free_mib": 4456
+          },
+          {
+            "used_mib": 1439,
+            "free_mib": 4528
+          },
+          {
+            "used_mib": 1447,
+            "free_mib": 4520
+          },
+          {
+            "used_mib": 1497,
+            "free_mib": 4470
+          },
+          {
+            "used_mib": 1497,
+            "free_mib": 4470
+          },
+          {
+            "used_mib": 1497,
+            "free_mib": 4470
+          },
+          {
+            "used_mib": 1497,
+            "free_mib": 4470
+          },
+          {
+            "used_mib": 1497,
+            "free_mib": 4470
+          },
+          {
+            "used_mib": 1497,
+            "free_mib": 4470
+          },
+          {
+            "used_mib": 1497,
+            "free_mib": 4470
+          },
+          {
+            "used_mib": 1497,
+            "free_mib": 4470
+          },
+          {
+            "used_mib": 1497,
+            "free_mib": 4470
+          },
+          {
+            "used_mib": 5017,
+            "free_mib": 950
+          },
+          {
+            "used_mib": 5115,
+            "free_mib": 852
+          },
+          {
+            "used_mib": 5115,
+            "free_mib": 852
+          },
+          {
+            "used_mib": 5501,
+            "free_mib": 466
+          },
+          {
+            "used_mib": 5486,
+            "free_mib": 481
+          },
+          {
+            "used_mib": 5509,
+            "free_mib": 458
+          },
+          {
+            "used_mib": 5509,
+            "free_mib": 458
+          },
+          {
+            "used_mib": 5509,
+            "free_mib": 458
+          },
+          {
+            "used_mib": 5509,
+            "free_mib": 458
+          },
+          {
+            "used_mib": 5509,
+            "free_mib": 458
+          },
+          {
+            "used_mib": 5509,
+            "free_mib": 458
+          },
+          {
+            "used_mib": 5509,
+            "free_mib": 458
+          },
+          {
+            "used_mib": 5509,
+            "free_mib": 458
+          },
+          {
+            "used_mib": 5509,
+            "free_mib": 458
+          },
+          {
+            "used_mib": 5509,
+            "free_mib": 458
+          },
+          {
+            "used_mib": 5509,
+            "free_mib": 458
+          },
+          {
+            "used_mib": 5531,
+            "free_mib": 436
+          },
+          {
+            "used_mib": 5531,
+            "free_mib": 436
+          },
+          {
+            "used_mib": 5514,
+            "free_mib": 453
+          }
+        ],
+        "peak_used_mib": 5531,
+        "minimum_free_mib": 436
+      },
+      "outcome": "unknown",
+      "repetition": 4
+    },
+    {
+      "model": "qwen2.5:7b",
+      "role": "기준 방어 분류기",
+      "status": "slm_inference",
+      "model_training": false,
+      "policy_mode": "dry-run",
+      "json_schema_valid": true,
+      "validated_policy": {
+        "policy_id": "multi-ai-dry-run-qwen2.5-7b",
+        "scope": "simulator-observation",
+        "match": {
+          "source": "CyberBattleSim"
+        },
+        "action": "observe",
+        "reason": "독립 평가 및 관리자 승인 필요",
+        "rollback": {
+          "mode": "automatic"
+        },
+        "approval_required": true
+      },
+      "risk": "low",
+      "reason": "독립 평가 및 관리자 승인 필요",
+      "action": "observe",
+      "approval_required": true,
+      "latency_ms": 12576.616,
+      "gpu_memory": {
+        "before_or_during_samples": [
+          {
+            "used_mib": 1463,
+            "free_mib": 4504
+          },
+          {
+            "used_mib": 1524,
+            "free_mib": 4443
+          },
+          {
+            "used_mib": 1545,
+            "free_mib": 4422
+          },
+          {
+            "used_mib": 1549,
+            "free_mib": 4418
+          },
+          {
+            "used_mib": 1558,
+            "free_mib": 4409
+          },
+          {
+            "used_mib": 1549,
+            "free_mib": 4418
+          },
+          {
+            "used_mib": 1551,
+            "free_mib": 4416
+          },
+          {
+            "used_mib": 1570,
+            "free_mib": 4397
+          },
+          {
+            "used_mib": 1561,
+            "free_mib": 4406
+          },
+          {
+            "used_mib": 1570,
+            "free_mib": 4397
+          },
+          {
+            "used_mib": 1561,
+            "free_mib": 4406
+          },
+          {
+            "used_mib": 1570,
+            "free_mib": 4397
+          },
+          {
+            "used_mib": 1613,
+            "free_mib": 4354
+          },
+          {
+            "used_mib": 1613,
+            "free_mib": 4354
+          },
+          {
+            "used_mib": 1613,
+            "free_mib": 4354
+          },
+          {
+            "used_mib": 1630,
+            "free_mib": 4337
+          },
+          {
+            "used_mib": 1618,
+            "free_mib": 4349
+          },
+          {
+            "used_mib": 1611,
+            "free_mib": 4356
+          },
+          {
+            "used_mib": 1611,
+            "free_mib": 4356
+          },
+          {
+            "used_mib": 1606,
+            "free_mib": 4361
+          },
+          {
+            "used_mib": 1593,
+            "free_mib": 4374
+          },
+          {
+            "used_mib": 1576,
+            "free_mib": 4391
+          },
+          {
+            "used_mib": 5186,
+            "free_mib": 781
+          },
+          {
+            "used_mib": 5186,
+            "free_mib": 781
+          },
+          {
+            "used_mib": 5511,
+            "free_mib": 456
+          },
+          {
+            "used_mib": 5513,
+            "free_mib": 454
+          },
+          {
+            "used_mib": 5521,
+            "free_mib": 446
+          },
+          {
+            "used_mib": 5504,
+            "free_mib": 463
+          },
+          {
+            "used_mib": 5504,
+            "free_mib": 463
+          },
+          {
+            "used_mib": 5521,
+            "free_mib": 446
+          },
+          {
+            "used_mib": 5517,
+            "free_mib": 450
+          },
+          {
+            "used_mib": 5517,
+            "free_mib": 450
+          },
+          {
+            "used_mib": 5517,
+            "free_mib": 450
+          },
+          {
+            "used_mib": 5517,
+            "free_mib": 450
+          },
+          {
+            "used_mib": 5500,
+            "free_mib": 467
+          },
+          {
+            "used_mib": 5517,
+            "free_mib": 450
+          },
+          {
+            "used_mib": 5517,
+            "free_mib": 450
+          },
+          {
+            "used_mib": 5517,
+            "free_mib": 450
+          },
+          {
+            "used_mib": 5517,
+            "free_mib": 450
+          },
+          {
+            "used_mib": 5517,
+            "free_mib": 450
+          },
+          {
+            "used_mib": 5517,
+            "free_mib": 450
+          }
+        ],
+        "peak_used_mib": 5521,
+        "minimum_free_mib": 446
+      },
+      "outcome": "unknown",
+      "repetition": 5
+    },
+    {
+      "model": "qwen2.5:7b",
+      "role": "기준 방어 분류기",
+      "status": "slm_inference",
+      "model_training": false,
+      "policy_mode": "dry-run",
+      "json_schema_valid": true,
+      "validated_policy": {
+        "policy_id": "multi-ai-dry-run-qwen2.5-7b",
+        "scope": "simulator-observation",
+        "match": {
+          "source": "CyberBattleSim"
+        },
+        "action": "observe",
+        "reason": "독립 평가 및 관리자 승인 필요",
+        "rollback": {
+          "mode": "automatic"
+        },
+        "approval_required": true
+      },
+      "risk": "low",
+      "reason": "독립 평가 및 관리자 승인 필요",
+      "action": "observe",
+      "approval_required": true,
+      "latency_ms": 12409.352,
+      "gpu_memory": {
+        "before_or_during_samples": [
+          {
+            "used_mib": 1467,
+            "free_mib": 4500
+          },
+          {
+            "used_mib": 1467,
+            "free_mib": 4500
+          },
+          {
+            "used_mib": 1476,
+            "free_mib": 4491
+          },
+          {
+            "used_mib": 1467,
+            "free_mib": 4500
+          },
+          {
+            "used_mib": 1476,
+            "free_mib": 4491
+          },
+          {
+            "used_mib": 1467,
+            "free_mib": 4500
+          },
+          {
+            "used_mib": 1467,
+            "free_mib": 4500
+          },
+          {
+            "used_mib": 1480,
+            "free_mib": 4487
+          },
+          {
+            "used_mib": 1467,
+            "free_mib": 4500
+          },
+          {
+            "used_mib": 1482,
+            "free_mib": 4485
+          },
+          {
+            "used_mib": 1484,
+            "free_mib": 4483
+          },
+          {
+            "used_mib": 1493,
+            "free_mib": 4474
+          },
+          {
+            "used_mib": 1536,
+            "free_mib": 4431
+          },
+          {
+            "used_mib": 1536,
+            "free_mib": 4431
+          },
+          {
+            "used_mib": 1536,
+            "free_mib": 4431
+          },
+          {
+            "used_mib": 1536,
+            "free_mib": 4431
+          },
+          {
+            "used_mib": 1536,
+            "free_mib": 4431
+          },
+          {
+            "used_mib": 1520,
+            "free_mib": 4447
+          },
+          {
+            "used_mib": 1497,
+            "free_mib": 4470
+          },
+          {
+            "used_mib": 1497,
+            "free_mib": 4470
+          },
+          {
+            "used_mib": 1497,
+            "free_mib": 4470
+          },
+          {
+            "used_mib": 3821,
+            "free_mib": 2146
+          },
+          {
+            "used_mib": 5138,
+            "free_mib": 829
+          },
+          {
+            "used_mib": 5121,
+            "free_mib": 846
+          },
+          {
+            "used_mib": 5561,
+            "free_mib": 406
+          },
+          {
+            "used_mib": 5642,
+            "free_mib": 325
+          },
+          {
+            "used_mib": 5687,
+            "free_mib": 280
+          },
+          {
+            "used_mib": 5687,
+            "free_mib": 280
+          },
+          {
+            "used_mib": 5687,
+            "free_mib": 280
+          },
+          {
+            "used_mib": 5700,
+            "free_mib": 267
+          },
+          {
+            "used_mib": 5786,
+            "free_mib": 181
+          },
+          {
+            "used_mib": 5786,
+            "free_mib": 181
+          },
+          {
+            "used_mib": 5780,
+            "free_mib": 187
+          },
+          {
+            "used_mib": 5783,
+            "free_mib": 184
+          },
+          {
+            "used_mib": 5783,
+            "free_mib": 184
+          },
+          {
+            "used_mib": 5783,
+            "free_mib": 184
+          },
+          {
+            "used_mib": 5766,
+            "free_mib": 201
+          },
+          {
+            "used_mib": 5766,
+            "free_mib": 201
+          },
+          {
+            "used_mib": 5769,
+            "free_mib": 198
+          },
+          {
+            "used_mib": 5786,
+            "free_mib": 181
+          }
+        ],
+        "peak_used_mib": 5786,
+        "minimum_free_mib": 181
+      },
+      "outcome": "unknown",
+      "repetition": 6
+    },
+    {
+      "model": "qwen2.5:7b",
+      "role": "기준 방어 분류기",
+      "status": "slm_inference",
+      "model_training": false,
+      "policy_mode": "dry-run",
+      "json_schema_valid": true,
+      "validated_policy": {
+        "policy_id": "multi-ai-dry-run-qwen2.5-7b",
+        "scope": "simulator-observation",
+        "match": {
+          "source": "CyberBattleSim"
+        },
+        "action": "observe",
+        "reason": "독립 평가 및 관리자 승인 필요",
+        "rollback": {
+          "mode": "automatic"
+        },
+        "approval_required": true
+      },
+      "risk": "low",
+      "reason": "독립 평가 및 관리자 승인 필요",
+      "action": "observe",
+      "approval_required": true,
+      "latency_ms": 11919.182,
+      "gpu_memory": {
+        "before_or_during_samples": [
+          {
+            "used_mib": 1704,
+            "free_mib": 4263
+          },
+          {
+            "used_mib": 1704,
+            "free_mib": 4263
+          },
+          {
+            "used_mib": 1712,
+            "free_mib": 4255
+          },
+          {
+            "used_mib": 1703,
+            "free_mib": 4264
+          },
+          {
+            "used_mib": 1720,
+            "free_mib": 4247
+          },
+          {
+            "used_mib": 1703,
+            "free_mib": 4264
+          },
+          {
+            "used_mib": 1703,
+            "free_mib": 4264
+          },
+          {
+            "used_mib": 1772,
+            "free_mib": 4195
+          },
+          {
+            "used_mib": 1705,
+            "free_mib": 4262
+          },
+          {
+            "used_mib": 1772,
+            "free_mib": 4195
+          },
+          {
+            "used_mib": 1703,
+            "free_mib": 4264
+          },
+          {
+            "used_mib": 1772,
+            "free_mib": 4195
+          },
+          {
+            "used_mib": 1772,
+            "free_mib": 4195
+          },
+          {
+            "used_mib": 1772,
+            "free_mib": 4195
+          },
+          {
+            "used_mib": 1772,
+            "free_mib": 4195
+          },
+          {
+            "used_mib": 1772,
+            "free_mib": 4195
+          },
+          {
+            "used_mib": 1772,
+            "free_mib": 4195
+          },
+          {
+            "used_mib": 1772,
+            "free_mib": 4195
+          },
+          {
+            "used_mib": 1772,
+            "free_mib": 4195
+          },
+          {
+            "used_mib": 1772,
+            "free_mib": 4195
+          },
+          {
+            "used_mib": 1772,
+            "free_mib": 4195
+          },
+          {
+            "used_mib": 5390,
+            "free_mib": 577
+          },
+          {
+            "used_mib": 5390,
+            "free_mib": 577
+          },
+          {
+            "used_mib": 5776,
+            "free_mib": 191
+          },
+          {
+            "used_mib": 5611,
+            "free_mib": 356
+          },
+          {
+            "used_mib": 5617,
+            "free_mib": 350
+          },
+          {
+            "used_mib": 5617,
+            "free_mib": 350
+          },
+          {
+            "used_mib": 5617,
+            "free_mib": 350
+          },
+          {
+            "used_mib": 5617,
+            "free_mib": 350
+          },
+          {
+            "used_mib": 5617,
+            "free_mib": 350
+          },
+          {
+            "used_mib": 5617,
+            "free_mib": 350
+          },
+          {
+            "used_mib": 5653,
+            "free_mib": 314
+          },
+          {
+            "used_mib": 5662,
+            "free_mib": 305
+          },
+          {
+            "used_mib": 5662,
+            "free_mib": 305
+          },
+          {
+            "used_mib": 5662,
+            "free_mib": 305
+          },
+          {
+            "used_mib": 5679,
+            "free_mib": 288
+          },
+          {
+            "used_mib": 5643,
+            "free_mib": 324
+          },
+          {
+            "used_mib": 5646,
+            "free_mib": 321
+          },
+          {
+            "used_mib": 5631,
+            "free_mib": 336
+          }
+        ],
+        "peak_used_mib": 5776,
+        "minimum_free_mib": 191
+      },
+      "outcome": "unknown",
+      "repetition": 7
+    },
+    {
+      "model": "qwen2.5:7b",
+      "role": "기준 방어 분류기",
+      "status": "slm_inference",
+      "model_training": false,
+      "policy_mode": "dry-run",
+      "json_schema_valid": true,
+      "validated_policy": {
+        "policy_id": "multi-ai-dry-run-qwen2.5-7b",
+        "scope": "simulator-observation",
+        "match": {
+          "source": "CyberBattleSim"
+        },
+        "action": "observe",
+        "reason": "독립 평가 및 관리자 승인 필요",
+        "rollback": {
+          "mode": "automatic"
+        },
+        "approval_required": true
+      },
+      "risk": "low",
+      "reason": "독립 평가 및 관리자 승인 필요",
+      "action": "observe",
+      "approval_required": true,
+      "latency_ms": 12229.963,
+      "gpu_memory": {
+        "before_or_during_samples": [
+          {
+            "used_mib": 1550,
+            "free_mib": 4417
+          },
+          {
+            "used_mib": 1549,
+            "free_mib": 4418
+          },
+          {
+            "used_mib": 1557,
+            "free_mib": 4410
+          },
+          {
+            "used_mib": 1550,
+            "free_mib": 4417
+          },
+          {
+            "used_mib": 1561,
+            "free_mib": 4406
+          },
+          {
+            "used_mib": 1550,
+            "free_mib": 4417
+          },
+          {
+            "used_mib": 1550,
+            "free_mib": 4417
+          },
+          {
+            "used_mib": 1619,
+            "free_mib": 4348
+          },
+          {
+            "used_mib": 1550,
+            "free_mib": 4417
+          },
+          {
+            "used_mib": 1619,
+            "free_mib": 4348
+          },
+          {
+            "used_mib": 1493,
+            "free_mib": 4474
+          },
+          {
+            "used_mib": 1562,
+            "free_mib": 4405
+          },
+          {
+            "used_mib": 1562,
+            "free_mib": 4405
+          },
+          {
+            "used_mib": 1562,
+            "free_mib": 4405
+          },
+          {
+            "used_mib": 1562,
+            "free_mib": 4405
+          },
+          {
+            "used_mib": 1562,
+            "free_mib": 4405
+          },
+          {
+            "used_mib": 1557,
+            "free_mib": 4410
+          },
+          {
+            "used_mib": 1557,
+            "free_mib": 4410
+          },
+          {
+            "used_mib": 1557,
+            "free_mib": 4410
+          },
+          {
+            "used_mib": 1540,
+            "free_mib": 4427
+          },
+          {
+            "used_mib": 1540,
+            "free_mib": 4427
+          },
+          {
+            "used_mib": 5158,
+            "free_mib": 809
+          },
+          {
+            "used_mib": 5158,
+            "free_mib": 809
+          },
+          {
+            "used_mib": 5534,
+            "free_mib": 433
+          },
+          {
+            "used_mib": 5563,
+            "free_mib": 404
+          },
+          {
+            "used_mib": 5569,
+            "free_mib": 398
+          },
+          {
+            "used_mib": 5570,
+            "free_mib": 397
+          },
+          {
+            "used_mib": 5662,
+            "free_mib": 305
+          },
+          {
+            "used_mib": 5732,
+            "free_mib": 235
+          },
+          {
+            "used_mib": 5717,
+            "free_mib": 250
+          },
+          {
+            "used_mib": 5770,
+            "free_mib": 197
+          },
+          {
+            "used_mib": 5796,
+            "free_mib": 171
+          },
+          {
+            "used_mib": 5798,
+            "free_mib": 169
+          },
+          {
+            "used_mib": 5755,
+            "free_mib": 212
+          },
+          {
+            "used_mib": 5808,
+            "free_mib": 159
+          },
+          {
+            "used_mib": 5759,
+            "free_mib": 208
+          },
+          {
+            "used_mib": 5740,
+            "free_mib": 227
+          },
+          {
+            "used_mib": 5640,
+            "free_mib": 327
+          },
+          {
+            "used_mib": 5723,
+            "free_mib": 244
+          },
+          {
+            "used_mib": 5724,
+            "free_mib": 243
+          }
+        ],
+        "peak_used_mib": 5808,
+        "minimum_free_mib": 159
+      },
+      "outcome": "unknown",
+      "repetition": 8
+    },
+    {
+      "model": "qwen2.5:7b",
+      "role": "기준 방어 분류기",
+      "status": "slm_inference",
+      "model_training": false,
+      "policy_mode": "dry-run",
+      "json_schema_valid": true,
+      "validated_policy": {
+        "policy_id": "multi-ai-dry-run-qwen2.5-7b",
+        "scope": "simulator-observation",
+        "match": {
+          "source": "CyberBattleSim"
+        },
+        "action": "observe",
+        "reason": "독립 평가 및 관리자 승인 필요",
+        "rollback": {
+          "mode": "automatic"
+        },
+        "approval_required": true
+      },
+      "risk": "low",
+      "reason": "독립 평가 및 관리자 승인 필요",
+      "action": "observe",
+      "approval_required": true,
+      "latency_ms": 13232.567,
+      "gpu_memory": {
+        "before_or_during_samples": [
+          {
+            "used_mib": 1643,
+            "free_mib": 4324
+          },
+          {
+            "used_mib": 1643,
+            "free_mib": 4324
+          },
+          {
+            "used_mib": 1652,
+            "free_mib": 4315
+          },
+          {
+            "used_mib": 1718,
+            "free_mib": 4249
+          },
+          {
+            "used_mib": 1732,
+            "free_mib": 4235
+          },
+          {
+            "used_mib": 1701,
+            "free_mib": 4266
+          },
+          {
+            "used_mib": 1716,
+            "free_mib": 4251
+          },
+          {
+            "used_mib": 1731,
+            "free_mib": 4236
+          },
+          {
+            "used_mib": 1711,
+            "free_mib": 4256
+          },
+          {
+            "used_mib": 1718,
+            "free_mib": 4249
+          },
+          {
+            "used_mib": 1711,
+            "free_mib": 4256
+          },
+          {
+            "used_mib": 1737,
+            "free_mib": 4230
+          },
+          {
+            "used_mib": 1771,
+            "free_mib": 4196
+          },
+          {
+            "used_mib": 1769,
+            "free_mib": 4198
+          },
+          {
+            "used_mib": 1769,
+            "free_mib": 4198
+          },
+          {
+            "used_mib": 1769,
+            "free_mib": 4198
+          },
+          {
+            "used_mib": 1769,
+            "free_mib": 4198
+          },
+          {
+            "used_mib": 1769,
+            "free_mib": 4198
+          },
+          {
+            "used_mib": 1753,
+            "free_mib": 4214
+          },
+          {
+            "used_mib": 1787,
+            "free_mib": 4180
+          },
+          {
+            "used_mib": 1770,
+            "free_mib": 4197
+          },
+          {
+            "used_mib": 1770,
+            "free_mib": 4197
+          },
+          {
+            "used_mib": 5378,
+            "free_mib": 589
+          },
+          {
+            "used_mib": 5282,
+            "free_mib": 685
+          },
+          {
+            "used_mib": 5296,
+            "free_mib": 671
+          },
+          {
+            "used_mib": 5679,
+            "free_mib": 288
+          },
+          {
+            "used_mib": 5687,
+            "free_mib": 280
+          },
+          {
+            "used_mib": 5662,
+            "free_mib": 305
+          },
+          {
+            "used_mib": 5662,
+            "free_mib": 305
+          },
+          {
+            "used_mib": 5662,
+            "free_mib": 305
+          },
+          {
+            "used_mib": 5662,
+            "free_mib": 305
+          },
+          {
+            "used_mib": 5662,
+            "free_mib": 305
+          },
+          {
+            "used_mib": 5662,
+            "free_mib": 305
+          },
+          {
+            "used_mib": 5657,
+            "free_mib": 310
+          },
+          {
+            "used_mib": 5657,
+            "free_mib": 310
+          },
+          {
+            "used_mib": 5657,
+            "free_mib": 310
+          },
+          {
+            "used_mib": 5631,
+            "free_mib": 336
+          },
+          {
+            "used_mib": 5619,
+            "free_mib": 348
+          },
+          {
+            "used_mib": 5614,
+            "free_mib": 353
+          },
+          {
+            "used_mib": 5614,
+            "free_mib": 353
+          },
+          {
+            "used_mib": 5598,
+            "free_mib": 369
+          },
+          {
+            "used_mib": 5550,
+            "free_mib": 417
+          },
+          {
+            "used_mib": 5523,
+            "free_mib": 444
+          }
+        ],
+        "peak_used_mib": 5687,
+        "minimum_free_mib": 280
+      },
+      "outcome": "unknown",
+      "repetition": 9
+    },
+    {
+      "model": "qwen2.5:7b",
+      "role": "기준 방어 분류기",
+      "status": "slm_inference",
+      "model_training": false,
+      "policy_mode": "dry-run",
+      "json_schema_valid": true,
+      "validated_policy": {
+        "policy_id": "multi-ai-dry-run-qwen2.5-7b",
+        "scope": "simulator-observation",
+        "match": {
+          "source": "CyberBattleSim"
+        },
+        "action": "observe",
+        "reason": "독립 평가 및 관리자 승인 필요",
+        "rollback": {
+          "mode": "automatic"
+        },
+        "approval_required": true
+      },
+      "risk": "low",
+      "reason": "독립 평가 및 관리자 승인 필요",
+      "action": "observe",
+      "approval_required": true,
+      "latency_ms": 13340.482,
+      "gpu_memory": {
+        "before_or_during_samples": [
+          {
+            "used_mib": 1434,
+            "free_mib": 4533
+          },
+          {
+            "used_mib": 1434,
+            "free_mib": 4533
+          },
+          {
+            "used_mib": 1443,
+            "free_mib": 4524
+          },
+          {
+            "used_mib": 1434,
+            "free_mib": 4533
+          },
+          {
+            "used_mib": 1439,
+            "free_mib": 4528
+          },
+          {
+            "used_mib": 1430,
+            "free_mib": 4537
+          },
+          {
+            "used_mib": 1430,
+            "free_mib": 4537
+          },
+          {
+            "used_mib": 1439,
+            "free_mib": 4528
+          },
+          {
+            "used_mib": 1430,
+            "free_mib": 4537
+          },
+          {
+            "used_mib": 1439,
+            "free_mib": 4528
+          },
+          {
+            "used_mib": 1430,
+            "free_mib": 4537
+          },
+          {
+            "used_mib": 1438,
+            "free_mib": 4529
+          },
+          {
+            "used_mib": 1499,
+            "free_mib": 4468
+          },
+          {
+            "used_mib": 1499,
+            "free_mib": 4468
+          },
+          {
+            "used_mib": 1499,
+            "free_mib": 4468
+          },
+          {
+            "used_mib": 1499,
+            "free_mib": 4468
+          },
+          {
+            "used_mib": 1499,
+            "free_mib": 4468
+          },
+          {
+            "used_mib": 1491,
+            "free_mib": 4476
+          },
+          {
+            "used_mib": 1487,
+            "free_mib": 4480
+          },
+          {
+            "used_mib": 1487,
+            "free_mib": 4480
+          },
+          {
+            "used_mib": 1487,
+            "free_mib": 4480
+          },
+          {
+            "used_mib": 1487,
+            "free_mib": 4480
+          },
+          {
+            "used_mib": 5105,
+            "free_mib": 862
+          },
+          {
+            "used_mib": 5105,
+            "free_mib": 862
+          },
+          {
+            "used_mib": 5105,
+            "free_mib": 862
+          },
+          {
+            "used_mib": 5491,
+            "free_mib": 476
+          },
+          {
+            "used_mib": 5491,
+            "free_mib": 476
+          },
+          {
+            "used_mib": 5495,
+            "free_mib": 472
+          },
+          {
+            "used_mib": 5495,
+            "free_mib": 472
+          },
+          {
+            "used_mib": 5495,
+            "free_mib": 472
+          },
+          {
+            "used_mib": 5495,
+            "free_mib": 472
+          },
+          {
+            "used_mib": 5495,
+            "free_mib": 472
+          },
+          {
+            "used_mib": 5495,
+            "free_mib": 472
+          },
+          {
+            "used_mib": 5495,
+            "free_mib": 472
+          },
+          {
+            "used_mib": 5495,
+            "free_mib": 472
+          },
+          {
+            "used_mib": 5495,
+            "free_mib": 472
+          },
+          {
+            "used_mib": 5495,
+            "free_mib": 472
+          },
+          {
+            "used_mib": 5495,
+            "free_mib": 472
+          },
+          {
+            "used_mib": 5495,
+            "free_mib": 472
+          },
+          {
+            "used_mib": 5495,
+            "free_mib": 472
+          },
+          {
+            "used_mib": 5495,
+            "free_mib": 472
+          },
+          {
+            "used_mib": 5495,
+            "free_mib": 472
+          },
+          {
+            "used_mib": 5495,
+            "free_mib": 472
+          }
+        ],
+        "peak_used_mib": 5495,
+        "minimum_free_mib": 472
+      },
+      "outcome": "unknown",
+      "repetition": 10
+    }
+  ],
+  "policy_mode": "dry-run",
+  "model_training": false
+}
