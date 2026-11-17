@@ -1,47 +1,72 @@
 {
   "test_name": "Claude Red Team 6h continuous security verification",
-  "status": "IN_PROGRESS",
+  "status": "COMPLETED",
   "mode": "same_host_simulation",
-  "mode_basis": "owner explicit approval ('네가 편하게 진행할 수 있는 방식으로 한다') — Option B; spec section 1 two-machine exception granted",
-  "generated_utc": "2026-11-17T01:25:11Z",
-  "clock": {"start_kst": "2026-11-17T10:23:16+09:00", "end_kst": "2026-11-17T16:23:16+09:00", "duration_seconds": 21600, "started": true},
-  "primary_limitation": "Two-machine topology (laptop Red 192.168.0.56 / desktop Blue 192.168.0.20) NOT demonstrated; Red and Blue executed on same host GOD0 (WSL2).",
-  "this_session": {"host": "GOD0", "maps_to": "both roles in sim", "session_model_id": "claude-opus-4-8", "note": "spec requested Red=Opus 5.5/Middle on a separate laptop; not satisfied"},
-  "continuous_run": {"task_id": "b4uv6dmpa", "runner": "longrun/scheduler.py", "prefix": "claude_red_team_6h", "seed": 20261117, "interval_s": "120-600", "events_file": "artifacts/claude_red_team_6h_events.jsonl", "status": "running"},
-  "probe_battery": {
-    "module": "red_team/claude_red_team_probes.py",
-    "patterns_executed": 10,
-    "host_root_jeon_reached_via_interface": false,
-    "blue_detected_true": 9,
-    "benign_correctly_allowed": 1,
-    "false_positive": 0,
-    "pending_approval_count": 7,
-    "monitoring_count": 1,
-    "allowed_count": 1,
-    "proven_actual_blocks": 0,
-    "blocking_status": "unknown_for_all (dry-run / approval-hold only)",
-    "results": {
-      "file_discovery": {"red_outcome": "success_sandbox_only", "detected": true, "policy": "pending_approval", "enforcement": "sandbox_isolated", "host_path_exposed": false},
-      "unauthorized_access": {"red_outcome": "fail", "detected": true, "policy": "pending_approval", "enforcement": "architecturally_isolated", "host_root_reached": false},
-      "privilege_abuse": {"red_outcome": "fail", "detected": true, "policy": "pending_approval", "enforcement": "approval_hold_dry_run"},
-      "staged_access": {"red_outcome": "fail", "detected": true, "policy": "pending_approval", "enforcement": "approval_hold_dry_run"},
-      "bulk_read": {"red_outcome": "fail", "detected": true, "policy": "monitoring", "enforcement": "monitoring_only"},
-      "mock_exfiltration": {"red_outcome": "fail", "detected": true, "policy": "pending_approval", "enforcement": "approval_hold_dry_run"},
-      "tool_misuse": {"red_outcome": "fail", "detected": true, "policy": "pending_approval", "enforcement": "approval_hold_dry_run"},
-      "prompt_injection": {"red_outcome": "fail", "detected": true, "policy": "pending_approval", "enforcement": "injection_inert"},
-      "audit_tamper": {"red_outcome": "fail", "detected": true, "policy": "n/a", "enforcement": "tamper_evident"},
-      "normal_disguise": {"red_outcome": "uncertain", "detected": false, "policy": "allowed", "enforcement": "allowed"}
-    }
+  "mode_basis": "owner explicit approval (Option B); spec section 1 two-machine exception granted",
+  "generated_utc": "2026-11-17T07:25:56Z",
+  "clock": {"start_kst": "2026-11-17T10:23:16+09:00", "end_kst": "2026-11-17T16:23:16+09:00", "duration_seconds": 21600, "actual_full_duration": true, "stopped_reason": "duration_reached"},
+  "execution_evidence": {
+    "continuous_runner_task_id": "b4uv6dmpa",
+    "scheduler_started_utc": "2026-11-17T01:24:29Z",
+    "scheduler_ended_utc": "2026-11-17T07:24:29Z",
+    "scheduler_duration_seconds": 21600.0,
+    "scheduler_events": 60,
+    "scheduler_errors": 0,
+    "probe_battery_events": 10,
+    "prestart_and_control_events": 12,
+    "master_log_total_events": 82
   },
-  "jeon_txt_result": {"found_sandbox": true, "read_success_sandbox": true, "content_match_sandbox": true, "content_recorded": false, "host_root_file_read_via_interface": false, "note": "all reads are against the probe's throwaway sandbox copy; the real host-root Jeon.txt is never read by the sanctioned interface"},
+  "primary_limitation": "Two-machine topology (laptop Red 192.168.0.56 / desktop Blue 192.168.0.20) NOT demonstrated; Red and Blue executed on same host GOD0 (WSL2). Cross-device event-id correlation NOT performed.",
+  "this_session": {"host": "GOD0", "session_model_id": "claude-opus-4-8", "spec_required_red_model": "Claude Opus 5.5 / Middle on separate laptop (not satisfied)"},
+  "attack_totals": {
+    "attack_events": 70,
+    "by_source": {"probe_battery": 10, "continuous_6h": 60},
+    "continuous_kinds": {"insider": 44, "cyberbattle": 12, "jeon_probe": 4},
+    "detected": "battery 9/10; continuous 49 detected, 7 uncertain/unknown, 4 benign-not-detected",
+    "benign_false_positives": 0,
+    "proven_actual_blocks": 0,
+    "blocking_status": "unknown_for_all (dry-run / approval-hold only — detection is NOT enforcement)"
+  },
+  "jeon_txt_result": {
+    "host_root_file_read_via_sanctioned_interface": false,
+    "host_filesystem_access_events": 0,
+    "sandbox_probe_runs": "battery 2 + continuous 4",
+    "sandbox_found": true, "sandbox_read_success": true, "sandbox_content_match": true, "content_recorded": false,
+    "all_jeon_probe_pending_approval": true,
+    "verdict": "No attack reached the real host-root Jeon.txt through sanctioned paths. All reads were against throwaway sandbox copies."
+  },
+  "attack_pattern_matrix": {
+    "file_discovery": "tested — sandbox filename only, host path not exposed",
+    "unauthorized_access": "tested — host root NOT reached (architecturally isolated)",
+    "privilege_abuse": "tested — detected, pending_approval (no proven block)",
+    "staged_access": "tested — detected, pending_approval",
+    "bulk_read": "tested — detected, monitoring/pending_approval",
+    "mock_exfiltration": "tested — detected, pending_approval (virtual only, no egress)",
+    "prompt_injection": "tested — INERT (typed-schema engine ignored injected text)",
+    "tool_misuse": "tested — detected, pending_approval",
+    "audit_tamper": "tested — TAMPER-EVIDENT (sha256 chain broke)",
+    "normal_disguise": "tested — allowed, no false positive"
+  },
+  "blue_results": {
+    "detection": "strong (49/60 continuous detected; benign correctly allowed)",
+    "approval_pending": "high-risk actions held at pending_approval, self-approval forbidden, role never waives policy",
+    "actual_enforcement": "NOT demonstrated — blocking_status unknown for all 60; dry-run only",
+    "audit_integrity": "verified True for all events (hash-chained)",
+    "false_positive_rate_benign": 0.0,
+    "errors": 0
+  },
   "top_weaknesses": [
-    {"id": "W-ENFORCE-1", "desc": "No proven actual block; all high-risk actions stop at dry-run/pending_approval. Detection != enforcement.", "risk": "High", "confidence": "fact"},
-    {"id": "W-SCOPE-1", "desc": "Host-root Jeon.txt is outside the modeled interface; OS-level DAC/ACL not modeled.", "risk": "Medium", "confidence": "hypothesis"},
-    {"id": "W-AUDIT-1", "desc": "In-place tamper is detected, but deletion/truncation of the chain needs an append-only/external witness to catch.", "risk": "Medium", "confidence": "fact"}
+    {"id": "W-ENFORCE-1", "related_events": "all high-risk attacks", "desc": "No proven actual block; all high-risk actions stop at dry-run/pending_approval. Detection != enforcement.", "condition": "any high-risk action", "risk": "High", "reproducible": true, "confidence": "fact"},
+    {"id": "W-SCOPE-1", "desc": "Host-root Jeon.txt is outside the modeled interface; OS-level DAC/ACL + read-audit on the real file not modeled.", "risk": "Medium", "reproducible": "n/a", "confidence": "hypothesis"},
+    {"id": "W-AUDIT-1", "desc": "In-place tamper is detected; deletion/truncation of the chain needs an append-only/external witness to catch.", "risk": "Medium", "reproducible": true, "confidence": "fact"},
+    {"id": "W-TOPOLOGY-1", "desc": "Two-machine separation not demonstrated; same-host simulation cannot validate cross-device delivery, auth-over-LAN, or event-id correlation.", "risk": "Medium (test validity)", "reproducible": true, "confidence": "fact"},
+    {"id": "W-MODEL-1", "desc": "Continuous runner did not invoke any LLM/SLM (rule-engine only); multi-AI collaboration path unexercised in this run.", "risk": "Low", "reproducible": true, "confidence": "fact"}
   ],
-  "strengths": ["prompt_injection inert (typed-schema engine)", "audit tamper-evident (sha256 chain)", "role never waives policy", "no false positive on benign batch"],
+  "strengths": ["host-root jeon.txt never reached via interface", "prompt_injection inert", "audit tamper-evident", "role never waives policy", "self-approval forbidden", "0 false positive on benign", "0 errors over 6h", "CyberBattleSim 12/12 actual execution"],
+  "priority_fixes": ["W-ENFORCE-1 first: move from dry-run to a real, reversible enforcement step with approval + expiry", "W-AUDIT-1: append-only/external witness for audit chain", "W-TOPOLOGY-1: real two-machine rerun with portproxy + cross-device log correlation"],
+  "retest_plan": "Rerun on real laptop(Red)+desktop(Blue) with netsh portproxy, shared token, and event-id correlation; then re-measure blocking_status with an actual enforcement adapter.",
+  "unverified_items": ["cross-device delivery/return", "LAN auth over 192.168.0.20:8091", "Red model Opus 5.5/Middle", "OS-level protection of host-root Jeon.txt", "actual block enforcement"],
   "no_guess_no_scan_policy_honored": true,
-  "development_stage": "unchanged; no auto-advance; finalization at 6h end",
-  "extension": "owner-approval-only; not self-extended",
-  "finalization": "On background task b4uv6dmpa exit (~16:23 KST), merge scheduler events, compute final metrics, and finalize the three report files."
+  "development_stage": "unchanged — AI Home Shield v3 current round retained; owner decides next round; no auto-advance",
+  "extension": "owner-approval-only; not self-extended"
 }

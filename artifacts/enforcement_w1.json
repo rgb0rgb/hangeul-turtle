@@ -1,0 +1,43 @@
+{
+  "sandbox_only": true,
+  "pending_io": "denied",
+  "approved_io": true,
+  "rollback_io": "denied",
+  "audit_witness_after_deletion": false,
+  "policy_applied_to_host": false,
+  "external_network": false,
+  "content_recorded": false,
+  "observations": [
+    {
+      "request_id": "enf-fce35f8f8362473fabfd5ad8",
+      "event_id": "enf-evidence-1",
+      "operation": "read",
+      "resource": "jeon.txt",
+      "state": "pending_approval",
+      "allowed": false,
+      "actual_io": false,
+      "policy_version": "enforce-v1"
+    },
+    {
+      "request_id": "enf-fce35f8f8362473fabfd5ad8",
+      "event_id": "enf-evidence-1",
+      "operation": "read",
+      "resource": "jeon.txt",
+      "state": "approved",
+      "allowed": true,
+      "actual_io": true,
+      "policy_version": "enforce-v1",
+      "result": "read_success"
+    },
+    {
+      "request_id": "enf-fce35f8f8362473fabfd5ad8",
+      "event_id": "enf-evidence-1",
+      "operation": "read",
+      "resource": "jeon.txt",
+      "state": "rejected",
+      "allowed": false,
+      "actual_io": false,
+      "policy_version": "enforce-v1"
+    }
+  ]
+}

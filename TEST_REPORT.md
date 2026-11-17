@@ -79,3 +79,11 @@
 - 오류: 이전에는 `UtilBindVsockAnyPort:317: socket failed 1`이 발생했고, 현재는 socket 접근 권한/샌드박스 경계까지 좁혀졌습니다.
 - 결론: compose 문법·격리 설정은 정상이며, 실제 daemon API 접근만 보류입니다.
 - 승인 대기: Docker Desktop 실행 상태, Settings → General의 WSL 2 based engine, Settings → Resources → WSL Integration에서 Ubuntu 활성화, Windows PowerShell의 `wsl -l -v`와 `wsl -d docker-desktop echo WSL 2 is working` 확인이 필요합니다. `wsl --shutdown`, Docker Desktop 재시작, Docker Desktop/WSL 업데이트는 관리자 또는 외부 상태 변경이므로 승인 전 실행하지 않았습니다.
+# 동일 차수 후속 검증 갱신 — 2026-11-17
+
+- 원본 6시간 증거 reconciliation: `EVIDENCE_RECONCILIATION.md`
+- W-ENFORCE-1 sandbox I/O gate: 승인 전 거부, 승인 후 실제 read 허용, rollback 후 거부, 범위 밖·자기 승인·토큰 재사용 거부
+- W-AUDIT-1 external witness: 삭제·절단·수정 검출
+- 전체 테스트: **39/39 통과**
+- 실제 고객/호스트/LAN/방화벽: 접근·변경 없음
+- 2대 topology 및 연속 실행 LLM 호출: 미검증/미행사로 유지

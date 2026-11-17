@@ -1,5 +1,8 @@
 .env
 .environment-check.txt
+AGENT_PASTE_PROMPT.md
+DEXTER_NEXT_TASK.md
+FULL_INSTRUCTION.md
 *.token
 *.pem
 *.key

@@ -82,3 +82,11 @@
 - 최종 전체 테스트 25/25 통과.
 - 기존 CLI JSON 경로의 Qwen2.5 실패 원인을 동일 관측으로 재현: `action is outside the allow-list`. JSON Schema API 경로에서는 10/10 통과.
 
+
+## 2026-11-17 — Claude Red Team 6h (동일 호스트 시뮬레이션)
+- 모드: 소유자 승인 Option B(2대 분리 미시연, §1 예외). 시계 10:23:16→16:23:16 KST, 21,600초 완주.
+- 사전점검: 2대 토폴로지(노트북 192.168.0.56 / 데스크톱 192.168.0.20) 미성립 기록 — 이 세션=Blue 데스크톱, WSL NAT 바인딩, 노트북 인바운드 0. IP 추측·스캔 안 함.
+- 실행: 탐침 배터리 10패턴 + 연속 스케줄러 60건(insider44/cyberbattle12/jeon4), 오류0, 감사무결성 전건 True.
+- 결과: 호스트 루트 Jeon.txt 인가경로 도달 0, blocking_status 60/60 unknown(실제차단 미입증=W-ENFORCE-1), 인젝션 무력화·변조탐지·오탐0.
+- 산출물: CLAUDE_RED_TEAM_REPORT.md / _EVENTS.jsonl(82) / _SUMMARY.json(COMPLETED). 개발 차수 유지, 자동 진행 없음.
+- 2026-11-17: Claude 6시간 보고서 원본·82건 로그·summary를 reconciliation했다. W-ENFORCE-1은 `/tmp` 전용 실제 I/O gate로 승인 전 거부/승인 후 허용/rollback 후 거부를 검증했고, W-AUDIT-1은 독립 witness로 삭제·절단·수정을 검출했다. 경쟁기술·상용 제품 비교를 `COMPETITIVE_TECH_REVIEW.md`에 기록했다. 전체 39/39 통과. 2대 LAN과 실환경 enforcement는 승인 전 미검증.

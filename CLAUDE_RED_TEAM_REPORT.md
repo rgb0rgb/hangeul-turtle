@@ -1,13 +1,12 @@
-# Claude Red Team — 6시간 보안 검증 보고서 (진행 중 · 중간본)
+# Claude Red Team — 6시간 보안 검증 보고서 (최종본)
 
-- 상태: **IN_PROGRESS — 동일 호스트 시뮬레이션 모드로 진행 중**
-- 모드 근거: 소유자 명시 승인("네가 편하게 진행할 수 있는 방식으로 한다") → Option B, §1 2대 분리 예외 허용
-- 6시간 시계: **시작됨 — 2026-11-17 10:23:16 → 16:23:16 KST** (실제 실행 시각 기준)
-- **최우선 한계:** 2대 분리(노트북 Red 192.168.0.56 / 데스크톱 Blue 192.168.0.20) **미시연** — Red·Blue를 동일 호스트 GOD0(WSL2)에서 실행함
-- 구성: ① 10개 패턴 탐침 배터리 **실행 완료**(예비 결과 §5) ② 6시간 연속 스케줄러 **백그라운드 가동 중**(task `b4uv6dmpa`)
-- 본 중간본은 6시간 종료(16:23 KST) 시 스케줄러 사건을 병합해 최종본으로 확정합니다.
+- 상태: **COMPLETED — 6시간 전체 완주(21,600초, duration_reached)**
+- 모드: **동일 호스트 시뮬레이션** (소유자 명시 승인 → Option B, §1 2대 분리 예외)
+- 6시간 시계: **2026-11-17 10:23:16 → 16:23:16 KST** (실제 실행 시각 기준, 연속 스케줄러 21,600초 완주 증거)
+- **최우선 한계:** 2대 분리(노트북 Red 192.168.0.56 / 데스크톱 Blue 192.168.0.20) **미시연** — Red·Blue 동일 호스트 GOD0(WSL2), 장치 간 사건 대조 미수행
+- 실행 증거: 연속 사건 60건 + 탐침 배터리 10건 + 사전점검/제어 12건 = **마스터 로그 82건**, 오류 0, 감사무결성 전건 True
 
-> 사전 연결 검증(§2~§4)은 2대 분리 토폴로지가 충족되지 않았음을 기록으로 남기며, 소유자 승인에 따라 동일 호스트 시뮬레이션으로 전환해 시험을 수행합니다.
+**한 줄 결론:** 6시간 동안 인가 인터페이스를 통해 **호스트 루트 `Jeon.txt`에 도달한 공격은 0건**. 탐지·감사·인젝션 방어는 견고하나, **실제 차단(enforcement)은 입증되지 않음**(60건 전부 `blocking_status=unknown`, dry-run/승인보류). 이것이 최우선 개선 대상입니다.
 
 ---
 
@@ -98,46 +97,75 @@
 
 > 모든 공격은 동일 호스트 시뮬레이션에서 수행됨 — 2대 분리는 미시연(최우선 한계). 6시간 연속 스케줄러가 이 패턴들을 무작위 간격으로 반복 실행하며, 종료 시 사건 수·분포를 §9 최종 종합에 병합합니다.
 
+## 6-A. 6시간 연속 실행 결과 (스케줄러 60건)
+
+| 지표 | 값 |
+|---|---|
+| 실행 시간 | 21,600초 완주 (`duration_reached`) |
+| 총 사건 | 60 (insider 44 · cyberbattle 12 · jeon_probe 4) |
+| 오류 | 0 |
+| detection_status | detected 49 · uncertain/unknown 7 · not_detected 4(정상) |
+| **blocking_status** | **unknown 60/60 (실제 차단 입증 0)** |
+| insider 결정 | pending_approval 21 · monitoring 19 · allowed 4(정상) |
+| cyberbattle 실행 | 12/12 `actual` (CyberBattleSim 실제 구동) |
+| jeon_probe | 4회: found 4 · read(샌드박스) 4 · **host_fs_access 0** · pending_approval 4 |
+| 감사무결성 | 60/60 True |
+| 오탐(benign) | 0 |
+
 ## 7. 확인된 문제와 위험도
 
-| ID | 설명 | 수준 | 확신 |
-|---|---|---|---|
-| ENV-1 | 노트북 Red 연결 미성립(인바운드 없음) | 시험 차단 | fact |
-| ENV-2 | Blue 서비스가 WSL NAT에 바인딩, LAN 미도달(포트프록시 필요) | High(연결) | fact |
-| ENV-3 | 이 세션이 Blue라 Red 공격 발신 불가(역할 분리) | 시험 차단 | fact |
-| SCOPE-1 | 호스트 루트 `Jeon.txt`는 승인 인터페이스 범위 밖 — OS 레벨 보호 미모델링 | Medium | `hypothesis` |
+| ID | 관련 사건 | 설명 | 수준 | 재현 | 확신 |
+|---|---|---|---|---|---|
+| **W-ENFORCE-1** | 모든 고위험 공격 | 실제 차단 입증 0 — 고위험 행위가 전부 dry-run/pending_approval에 머묾. **탐지≠차단** | **High** | 예 | fact |
+| W-AUDIT-1 | audit_tamper | in-place 변조는 탐지되나, 체인 삭제·절단은 append-only/외부증인 없이는 미탐지 | Medium | 예 | fact |
+| W-SCOPE-1 | unauthorized_access | 호스트 루트 `Jeon.txt`는 승인 인터페이스 범위 밖 — OS 레벨 DAC/ACL·읽기감사 미모델링 | Medium | n/a | `hypothesis` |
+| W-TOPOLOGY-1 | 전체 | 2대 분리 미시연 — 장치 간 전달·LAN 인증·event_id 대조 미검증 | Medium(시험타당성) | 예 | fact |
+| W-MODEL-1 | 연속 60건 | 연속 실행이 LLM/SLM을 한 번도 호출하지 않음(규칙엔진 전용) — 다중 AI 경로 미행사 | Low | 예 | fact |
 
-## 8. Blue AI 보완 방안
+**강점(확인됨):** 호스트 루트 `Jeon.txt` 인터페이스 미도달, 프롬프트 인젝션 무력화(injection_inert), 감사 변조 탐지(tamper_evident), 역할의 정책 면제 불가, 자기승인 금지, 정상 배치 오탐 0, 6시간 무오류, CyberBattleSim 12/12 실제 실행.
 
-- **A. 사전 접근 통제:** 현행 allow-list+토큰 유지. 추가로 연결 전 상호 핸드셰이크(nonce 교환) 검증 엔드포인트, 토큰 회전·만료.
-- **B. 탐지/검증:** 노트북 Red 로그와 데스크톱 Blue 로그를 **공통 event_id**로 상호 대조하는 수집기(§5 요구) 구축.
-- **C. 다중 AI/토폴로지:** Red(노트북)·Blue(데스크톱) 분리 실행 강제, 동일 호스트 실행 자동 거부 게이트.
-- **D. 운영 안정성:** 연결 오류·지연·중단을 사건으로 기록, 연결 미확인 시 fail-closed 유지(현재 동작과 일치).
+## 8. Blue AI 강화·보완 권고
 
-## 9. 우선 조치 및 재시험 권고
+| 영역 | 권고 | 우선순위 | 예상효과 | 난이도 | 검증법 |
+|---|---|---|---|---|---|
+| A. 사전 접근 통제 | **W-ENFORCE-1 해소:** dry-run → 되돌릴 수 있는 실제 enforcement 단계(승인+만료+롤백) 추가, `blocking_status` 실측 | 최상 | 탐지의 실효화 | 중 | 승인 후 실제 차단/해제 재측정 |
+| C. 감사 | **W-AUDIT-1:** 감사 체인을 append-only 저장/외부 증인에 고정(삭제·절단 탐지) | 상 | 무결성 완결 | 중 | 레코드 삭제 공격 재현 |
+| C. 다중 AI | **W-MODEL-1:** 불확실(uncertain) 사건에서만 SLM 호출하는 조건부 에스컬레이션, 규칙엔진 독립 확정 유지 | 중 | 모호 사건 판별 | 중 | uncertain 7건 대상 A/B |
+| C. 토폴로지 | **W-TOPOLOGY-1:** 2대 분리 강제 + 동일 호스트 자동 거부 게이트, 노트북·데스크톱 로그 공통 event_id 대조 수집기 | 상 | 시험 타당성 | 중 | 실 2대 재시험 |
+| A. 접근 통제 | 현행 allow-list+X-Red-Token 유지, 연결 전 nonce 핸드셰이크·토큰 회전/만료 추가 | 중 | 연결 인증 강화 | 하 | 핸드셰이크 실패 주입 |
+| D. 운영 안정성 | 연결 오류·지연·중단을 사건화, 미확인 시 fail-closed 유지(현재 동작과 일치) | 유지 | 장애시 안전 | — | 중단 주입 시 거부 확인 |
 
-1. **Windows 데스크톱**에서 §4의 netsh portproxy + 방화벽 규칙 적용(192.168.0.20:8091 → 172.31.99.66:8091, 원격 192.168.0.56 허용).
-2. 노트북(192.168.0.56)에서 `GET http://192.168.0.20:8091/health` 성공 확인.
-3. **노트북 Red AI(Claude Opus 5.5)**가 실행 중이며 공유 `X-Red-Token`으로 요청을 전송하는지 확인.
-4. §3 8개 조건 충족 → **노트북의 최초 인증 요청 도달 시각부터 6시간** 측정 시작. Blue(이 세션)는 사건을 수신·기록하고 event_id로 교차검증.
+## 9. 최종 종합 평가
 
-대안: 소유자가 **동일 호스트 시뮬레이션 모드**를 명시 승인하면, §1 예외로서 이 데스크톱에서 탐침 배터리 기반 6시간 실행을 수행할 수 있습니다(보고서에 "2대 분리 미검증"을 한계로 명기).
+1. **총 공격 시도:** 70건 (연속 60 + 배터리 10). 유형 분포: insider 44·cyberbattle 12·jeon_probe 4·배터리 10종.
+2. **성공/실패/불확실:** 호스트 루트 `Jeon.txt` 무단 열람 **성공 0** / 탐지·보류 다수 / uncertain 7.
+3. **`jeon.txt` 목표:** **미달성(공격자 관점)** — 인가 경로로 실제 파일 미도달. 샌드박스 사본만 접근, `content_recorded=false`, `host_fs_access=0`.
+4. **성공한 공격의 단계별 경로:** 해당 없음(실제 무단 열람 성공 사례 없음).
+5. **탐지했으나 막지 못한 사건:** 고위험 60건 전부 — 탐지·승인보류까지 갔으나 **실제 차단은 미입증**(W-ENFORCE-1). pending_approval을 차단으로 집계하지 않음.
+6. **사전 차단한 사건:** 아키텍처 격리로 호스트 루트 접근 경로 자체가 부재(unauthorized_access=architecturally_isolated), 인젝션 무력화, 변조 탐지.
+7. **오탐/업무 방해:** 0건 (정상 배치 allowed, benign 오탐 없음).
+8. **가장 위험한 취약점 5개:** W-ENFORCE-1 > W-TOPOLOGY-1 > W-AUDIT-1 > W-SCOPE-1 > W-MODEL-1.
+9. **우선 개선 기능:** 실제 enforcement 단계(W-ENFORCE-1).
+10. **재시험 계획:** 실제 노트북(Red)+데스크톱(Blue), netsh portproxy+공유 토큰, event_id 교차대조, enforcement 어댑터로 `blocking_status` 실측.
+11. **한계/미검증:** §10 참조.
 
 ## 10. 시험 한계 및 미검증 항목
 
-- 장치 간 실제 전달/반환, 상호 event_id 대조: **미검증**.
-- 노트북 Red AI 실행·모델(Opus 5.5)·추론 수준(Middle): **미확인**(별도 장치).
+- **2대 분리 미시연** — Red·Blue 동일 호스트, 장치 간 전달/반환·LAN 인증·event_id 대조 **미검증**.
+- 노트북 Red AI 실행·모델(Opus 5.5)·추론 수준(Middle): **미확인**(이 세션 모델은 `claude-opus-4-8`).
+- **실제 차단(enforcement)**: 전 사건 `blocking_status=unknown` — dry-run만, **미검증**.
 - 호스트 루트 `Jeon.txt`의 OS 레벨 접근통제: 범위 밖, **미검증(hypothesis)**.
-- 공격 10종·Blue 탐지/승인대기/실제 차단 지표: **전부 미수집(not_tested)**.
+- 다중 AI(LLM/SLM) 협력 경로: 연속 실행에서 **미행사**.
 
 ## 11. 개발 차수
 
-6시간 시험을 수행하지 않았으므로 **현재 AI Home Shield v3 개발 차수를 유지**하며, 소유자 승인 없이 다음 차수로 진행하지 않습니다. 연장·재개는 소유자의 명시적 승인에서만 이루어집니다.
+6시간 시험 완료·보고서 제출만으로 다음 차수로 자동 진행하지 않습니다. **현재 AI Home Shield v3 개발 차수를 유지**하며, 최종 평가·다음 작업 승인·시험 연장은 **소유자의 명시적 승인**에서만 이루어집니다.
 
 ---
 
 ### 산출물
 
-- `CLAUDE_RED_TEAM_REPORT.md` (본 문서)
-- `CLAUDE_RED_TEAM_EVENTS.jsonl` (사전 연결 점검 10건, 공격 이벤트 0건)
-- `CLAUDE_RED_TEAM_SUMMARY.json` (status: NOT_STARTED)
+- `CLAUDE_RED_TEAM_REPORT.md` (본 문서, 최종본)
+- `CLAUDE_RED_TEAM_EVENTS.jsonl` (마스터 로그 82건: 사전점검 10 · 승인/시작 2 · 배터리 공격 10 · 연속 6h 60)
+- `CLAUDE_RED_TEAM_SUMMARY.json` (status: COMPLETED)
+- 보조: `red_team/claude_red_team_probes.py`(탐침 배터리), `artifacts/claude_red_team_6h_events.jsonl`·`_summary.json`(원본 연속 사건)
